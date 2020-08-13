@@ -5,7 +5,7 @@
       {
         "rule": "cli",
         "binary": "node",
-        "semver": "14.0.0"
+        "semver": "14.8.0"
       }
     ],
     "Watchman": [
@@ -29,7 +29,7 @@
       {
         "rule": "cli",
         "binary": "npm",
-        "semver": "6.14.4"
+        "semver": "6.14.7"
       }
     ],
     "Yarn": [
@@ -56,7 +56,7 @@
       {
         "rule": "cli",
         "binary": "xcodebuild",
-        "semver": "11.4.1",
+        "semver": "11.6",
         "platform": "darwin"
       },
       {
