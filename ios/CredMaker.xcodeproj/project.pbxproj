@@ -20,23 +20,23 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* CredMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CredMakerTests.m */; };
 		308F8BDC95C744879812C3E8 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9D2A0DAF7224F0C9D41A59E /* Montserrat-ExtraLightItalic.ttf */; };
+		3ABFBD65EB2E3145CF13CD3B /* libPods-CredMaker-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7924D9FC5D50AE4386C8370 /* libPods-CredMaker-tvOSTests.a */; };
 		46901AC9E3BE49B29EE12FB0 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C14D1050A46424A992F548F /* Montserrat-BoldItalic.ttf */; };
 		6402D772EE044E8B92E14CC3 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36ED7254E71B468E9AF186F4 /* Montserrat-Light.ttf */; };
+		69F52FCD0D7F4BC87579895F /* libPods-CredMaker-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 762305D3CC2E43DA4610C428 /* libPods-CredMaker-tvOS.a */; };
 		71C32C2496DC41E4AFD3B7CD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2E197B100EB46EB9CA05371 /* Montserrat-Bold.ttf */; };
-		78713031055C0CA1EA8BC81A /* libPods-CredMaker-CredMakerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4CF62D0BD355D168998B28 /* libPods-CredMaker-CredMakerTests.a */; };
 		7F32CD95C9B4472FA1A12745 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6D9543E432D4F2E86F36CB3 /* Montserrat-MediumItalic.ttf */; };
 		9F0FC48EE3224F7C93B1E54C /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C036D754FE2422C97AC07D5 /* Montserrat-BlackItalic.ttf */; };
 		A104C13DE516464582D0FB0E /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67FF8B21813C4187A377CC13 /* Montserrat-ExtraLight.ttf */; };
 		B379377A5BC34B63B4781C4D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE3EFB2CD004AE181389A48 /* Montserrat-Medium.ttf */; };
 		BCB20A7FEE3F4FEEB96AB269 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C402D27AA435CAED99F61 /* Montserrat-ExtraBold.ttf */; };
-		C38A2D60E27168CDF2FA4874 /* libPods-CredMaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67523583E1AD80469DEF0DB4 /* libPods-CredMaker.a */; };
 		C462250131634E65A314A042 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE41155CEF2E44BA867F6A5D /* Montserrat-SemiBoldItalic.ttf */; };
 		C5F47292DF6B4CB1A3F93E0D /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1204BA18DF994E499FF60E8B /* Montserrat-Black.ttf */; };
 		DA20138164DB41EB8C08B079 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2663D139C34D4D6BADD603C1 /* Montserrat-Thin.ttf */; };
+		DFE3E8A0CFF8C4BB3319BF82 /* libPods-CredMaker-CredMakerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CB809C9A9AA55D56724D67 /* libPods-CredMaker-CredMakerTests.a */; };
+		E87D5FD1DF1D267C8B2E3098 /* libPods-CredMaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C60EF43F23ED5C22FC35F9 /* libPods-CredMaker.a */; };
 		E964DB8FA63644E19846BD0D /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA772113986444CBDBC19A1 /* Montserrat-ExtraBoldItalic.ttf */; };
-		EEB9F963370687F7AFBBF8B1 /* libPods-CredMaker-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2669F1780D8E9BB5D381F644 /* libPods-CredMaker-tvOS.a */; };
 		F4A998CE7F004B7BB2D8E7A1 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EDB7D6DE4D64C3690F3AC8B /* Montserrat-ThinItalic.ttf */; };
-		FC424908CBD0C9BB84EE4385 /* libPods-CredMaker-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100700E345DA4EE820CEEA9 /* libPods-CredMaker-tvOSTests.a */; };
 		FEED7327680C4468AA4725A4 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3C26A27A0BA4DEFB798F064 /* Montserrat-LightItalic.ttf */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +62,8 @@
 		00E356EE1AD99517003FC87E /* CredMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CredMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CredMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CredMakerTests.m; sourceTree = "<group>"; };
+		0AB620879C664BF4B82BF667 /* Pods-CredMaker-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOSTests/Pods-CredMaker-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDB7D6DE4D64C3690F3AC8B /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ThinItalic.ttf"; path = "../app/theme/fonts/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
-		0F923EF456EFCF3D2CA9F618 /* Pods-CredMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker/Pods-CredMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		1204BA18DF994E499FF60E8B /* Montserrat-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.ttf"; path = "../app/theme/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CredMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CredMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CredMaker/AppDelegate.h; sourceTree = "<group>"; };
@@ -73,9 +73,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CredMaker/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CredMaker/main.m; sourceTree = "<group>"; };
 		1F3C402D27AA435CAED99F61 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.ttf"; path = "../app/theme/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
-		230E0A9E711B9F3BA806A219 /* Pods-CredMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker.release.xcconfig"; path = "Target Support Files/Pods-CredMaker/Pods-CredMaker.release.xcconfig"; sourceTree = "<group>"; };
 		2663D139C34D4D6BADD603C1 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Thin.ttf"; path = "../app/theme/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
-		2669F1780D8E9BB5D381F644 /* libPods-CredMaker-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* CredMaker-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CredMaker-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* CredMaker-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CredMaker-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA772113986444CBDBC19A1 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBoldItalic.ttf"; path = "../app/theme/fonts/Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -83,26 +81,28 @@
 		36ED7254E71B468E9AF186F4 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.ttf"; path = "../app/theme/fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		5C036D754FE2422C97AC07D5 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BlackItalic.ttf"; path = "../app/theme/fonts/Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		643A5308664D43C183B19C99 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../app/theme/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		67523583E1AD80469DEF0DB4 /* libPods-CredMaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FF8B21813C4187A377CC13 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLight.ttf"; path = "../app/theme/fonts/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
-		7100700E345DA4EE820CEEA9 /* libPods-CredMaker-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8464282867B28E7035F8E5E6 /* Pods-CredMaker-CredMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-CredMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8A1C9850AF8CB94E27E68D9D /* Pods-CredMaker-CredMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-CredMakerTests.release.xcconfig"; path = "Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		73DF6A1EA27FF62DB4A27A37 /* Pods-CredMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker/Pods-CredMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		762305D3CC2E43DA4610C428 /* libPods-CredMaker-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		827111520AE841C1F5F7CE52 /* Pods-CredMaker-CredMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-CredMakerTests.release.xcconfig"; path = "Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		84C60EF43F23ED5C22FC35F9 /* libPods-CredMaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8791D3CFEBFE552C16418074 /* Pods-CredMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker.release.xcconfig"; path = "Target Support Files/Pods-CredMaker/Pods-CredMaker.release.xcconfig"; sourceTree = "<group>"; };
 		8AFDDC3DE547402BB446DBC0 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../app/theme/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		8C14D1050A46424A992F548F /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BoldItalic.ttf"; path = "../app/theme/fonts/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
-		911909929E00442ECE12AE86 /* Pods-CredMaker-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOSTests/Pods-CredMaker-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		9E2A40B65F0043E407EB5FB4 /* Pods-CredMaker-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOS.release.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOS/Pods-CredMaker-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		A6D9543E432D4F2E86F36CB3 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-MediumItalic.ttf"; path = "../app/theme/fonts/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		ACE7FC3D549F4D17B78243E8 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Italic.ttf"; path = "../app/theme/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
-		AD4CF62D0BD355D168998B28 /* libPods-CredMaker-CredMakerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker-CredMakerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6166756FF26DA6CA33FCE1C /* Pods-CredMaker-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOS/Pods-CredMaker-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C27BBC21DE6B02496CFC308A /* Pods-CredMaker-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOS/Pods-CredMaker-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C9D2A0DAF7224F0C9D41A59E /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLightItalic.ttf"; path = "../app/theme/fonts/Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		D40C61F16BBE837292684011 /* Pods-CredMaker-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOS.release.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOS/Pods-CredMaker-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		DE41155CEF2E44BA867F6A5D /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBoldItalic.ttf"; path = "../app/theme/fonts/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		E3C26A27A0BA4DEFB798F064 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-LightItalic.ttf"; path = "../app/theme/fonts/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		E7924D9FC5D50AE4386C8370 /* libPods-CredMaker-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8CB809C9A9AA55D56724D67 /* libPods-CredMaker-CredMakerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredMaker-CredMakerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F13C8562A4504FC0FFDCA85E /* Pods-CredMaker-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOSTests/Pods-CredMaker-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2E197B100EB46EB9CA05371 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../app/theme/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		F97B0F8D3D66777D23ED6E1E /* Pods-CredMaker-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker-tvOSTests/Pods-CredMaker-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F496EF44CF34C777E5E22412 /* Pods-CredMaker-CredMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredMaker-CredMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78713031055C0CA1EA8BC81A /* libPods-CredMaker-CredMakerTests.a in Frameworks */,
+				DFE3E8A0CFF8C4BB3319BF82 /* libPods-CredMaker-CredMakerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38A2D60E27168CDF2FA4874 /* libPods-CredMaker.a in Frameworks */,
+				E87D5FD1DF1D267C8B2E3098 /* libPods-CredMaker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEB9F963370687F7AFBBF8B1 /* libPods-CredMaker-tvOS.a in Frameworks */,
+				69F52FCD0D7F4BC87579895F /* libPods-CredMaker-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC424908CBD0C9BB84EE4385 /* libPods-CredMaker-tvOSTests.a in Frameworks */,
+				3ABFBD65EB2E3145CF13CD3B /* libPods-CredMaker-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,25 +177,25 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				67523583E1AD80469DEF0DB4 /* libPods-CredMaker.a */,
-				AD4CF62D0BD355D168998B28 /* libPods-CredMaker-CredMakerTests.a */,
-				2669F1780D8E9BB5D381F644 /* libPods-CredMaker-tvOS.a */,
-				7100700E345DA4EE820CEEA9 /* libPods-CredMaker-tvOSTests.a */,
+				84C60EF43F23ED5C22FC35F9 /* libPods-CredMaker.a */,
+				E8CB809C9A9AA55D56724D67 /* libPods-CredMaker-CredMakerTests.a */,
+				762305D3CC2E43DA4610C428 /* libPods-CredMaker-tvOS.a */,
+				E7924D9FC5D50AE4386C8370 /* libPods-CredMaker-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		39BE64F2EA915964FC289558 /* Pods */ = {
+		4029814294AF6B805213B310 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0F923EF456EFCF3D2CA9F618 /* Pods-CredMaker.debug.xcconfig */,
-				230E0A9E711B9F3BA806A219 /* Pods-CredMaker.release.xcconfig */,
-				8464282867B28E7035F8E5E6 /* Pods-CredMaker-CredMakerTests.debug.xcconfig */,
-				8A1C9850AF8CB94E27E68D9D /* Pods-CredMaker-CredMakerTests.release.xcconfig */,
-				C6166756FF26DA6CA33FCE1C /* Pods-CredMaker-tvOS.debug.xcconfig */,
-				9E2A40B65F0043E407EB5FB4 /* Pods-CredMaker-tvOS.release.xcconfig */,
-				F97B0F8D3D66777D23ED6E1E /* Pods-CredMaker-tvOSTests.debug.xcconfig */,
-				911909929E00442ECE12AE86 /* Pods-CredMaker-tvOSTests.release.xcconfig */,
+				73DF6A1EA27FF62DB4A27A37 /* Pods-CredMaker.debug.xcconfig */,
+				8791D3CFEBFE552C16418074 /* Pods-CredMaker.release.xcconfig */,
+				F496EF44CF34C777E5E22412 /* Pods-CredMaker-CredMakerTests.debug.xcconfig */,
+				827111520AE841C1F5F7CE52 /* Pods-CredMaker-CredMakerTests.release.xcconfig */,
+				C27BBC21DE6B02496CFC308A /* Pods-CredMaker-tvOS.debug.xcconfig */,
+				D40C61F16BBE837292684011 /* Pods-CredMaker-tvOS.release.xcconfig */,
+				0AB620879C664BF4B82BF667 /* Pods-CredMaker-tvOSTests.debug.xcconfig */,
+				F13C8562A4504FC0FFDCA85E /* Pods-CredMaker-tvOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -243,7 +243,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7DE28C9F13224CE7A959DD1D /* Resources */,
-				39BE64F2EA915964FC289558 /* Pods */,
+				4029814294AF6B805213B310 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -268,11 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CredMakerTests" */;
 			buildPhases = (
-				217993D9A39AFF6BC9BEB1D5 /* [CP] Check Pods Manifest.lock */,
+				EC7D6C3A476ED71F25490AD5 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				D682F43CF2E8ADECE6C0993C /* [CP] Copy Pods Resources */,
+				7714A89435A9614044D1C918 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,13 +288,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CredMaker" */;
 			buildPhases = (
-				97F4118F28CCDA741BD07227 /* [CP] Check Pods Manifest.lock */,
+				9EEEA3B1B6B26C8583D50215 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E815A466EDE47F60F6CF44BA /* [CP] Copy Pods Resources */,
+				5F32796474ABAAED78B0EA5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,7 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "CredMaker-tvOS" */;
 			buildPhases = (
-				9F4C2611AE01F7367E44D788 /* [CP] Check Pods Manifest.lock */,
+				6B42A5AB016901081ED02AE4 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -329,7 +329,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "CredMaker-tvOSTests" */;
 			buildPhases = (
-				ACA411012C18D948403DDF6B /* [CP] Check Pods Manifest.lock */,
+				AB4CFE50AB24B80652C05246 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -456,28 +456,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		217993D9A39AFF6BC9BEB1D5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CredMaker-CredMakerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,29 +470,25 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		97F4118F28CCDA741BD07227 /* [CP] Check Pods Manifest.lock */ = {
+		5F32796474ABAAED78B0EA5E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-CredMaker/Pods-CredMaker-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CredMaker-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CredMaker/Pods-CredMaker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F4C2611AE01F7367E44D788 /* [CP] Check Pods Manifest.lock */ = {
+		6B42A5AB016901081ED02AE4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -536,7 +510,47 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACA411012C18D948403DDF6B /* [CP] Check Pods Manifest.lock */ = {
+		7714A89435A9614044D1C918 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EEEA3B1B6B26C8583D50215 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CredMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB4CFE50AB24B80652C05246 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -558,40 +572,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D682F43CF2E8ADECE6C0993C /* [CP] Copy Pods Resources */ = {
+		EC7D6C3A476ED71F25490AD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			inputFileListPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"$(DERIVED_FILE_DIR)/Pods-CredMaker-CredMakerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CredMaker-CredMakerTests/Pods-CredMaker-CredMakerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E815A466EDE47F60F6CF44BA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CredMaker/Pods-CredMaker-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CredMaker/Pods-CredMaker-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -699,7 +699,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8464282867B28E7035F8E5E6 /* Pods-CredMaker-CredMakerTests.debug.xcconfig */;
+			baseConfigurationReference = F496EF44CF34C777E5E22412 /* Pods-CredMaker-CredMakerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -722,7 +722,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A1C9850AF8CB94E27E68D9D /* Pods-CredMaker-CredMakerTests.release.xcconfig */;
+			baseConfigurationReference = 827111520AE841C1F5F7CE52 /* Pods-CredMaker-CredMakerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -742,7 +742,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F923EF456EFCF3D2CA9F618 /* Pods-CredMaker.debug.xcconfig */;
+			baseConfigurationReference = 73DF6A1EA27FF62DB4A27A37 /* Pods-CredMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -762,7 +762,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230E0A9E711B9F3BA806A219 /* Pods-CredMaker.release.xcconfig */;
+			baseConfigurationReference = 8791D3CFEBFE552C16418074 /* Pods-CredMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -781,7 +781,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6166756FF26DA6CA33FCE1C /* Pods-CredMaker-tvOS.debug.xcconfig */;
+			baseConfigurationReference = C27BBC21DE6B02496CFC308A /* Pods-CredMaker-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -809,7 +809,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E2A40B65F0043E407EB5FB4 /* Pods-CredMaker-tvOS.release.xcconfig */;
+			baseConfigurationReference = D40C61F16BBE837292684011 /* Pods-CredMaker-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -837,7 +837,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F97B0F8D3D66777D23ED6E1E /* Pods-CredMaker-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0AB620879C664BF4B82BF667 /* Pods-CredMaker-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -864,7 +864,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 911909929E00442ECE12AE86 /* Pods-CredMaker-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = F13C8562A4504FC0FFDCA85E /* Pods-CredMaker-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
