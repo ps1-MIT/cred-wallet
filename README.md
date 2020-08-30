@@ -86,6 +86,13 @@ rm Podfile.lock
 pod deintegrate && pod install
 ```
 
+Uninstalling and reinstalling cocoapods might also help:
+
+```
+$ gem uninstall cocoapods
+$ gem install cocoapods
+```
+ 
 #### Emulator Gotchas
 
 ##### Scrolling
