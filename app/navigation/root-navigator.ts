@@ -4,7 +4,6 @@ import {
   MainScreen,
 } from "../screens" // eslint-disable-line @typescript-eslint/no-unused-vars
 
-
 export const RootNavigator = createStackNavigator(
   {
     mainScreen: { screen: MainScreen },

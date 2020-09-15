@@ -138,6 +138,14 @@ export const MainScreen: React.FunctionComponent<MainScreenProps> = observer(pro
         <Button
           style={BUTTON}
           textStyle={DEMO_TEXT}
+          tx="demoScreen.requestVCButton"
+          onPress={() => props.navigation.navigate("request")}
+        />
+      </View>
+      <View>
+        <Button
+          style={BUTTON}
+          textStyle={DEMO_TEXT}
           tx="demoScreen.getVCButton"
           onPress={() => props.navigation.navigate("import")}
         />

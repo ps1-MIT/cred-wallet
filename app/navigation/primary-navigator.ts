@@ -2,12 +2,14 @@ import createNativeStackNavigator from "react-native-screens/createNativeStackNa
 import {
   MainScreen,
   DetailsScreen,
-  ImportScreen
+  ImportScreen,
+  RequestScreen
 } from "../screens"
 
 export const PrimaryNavigator = createNativeStackNavigator(
   {
     main: { screen: MainScreen },
+    request: { screen: RequestScreen },
     details: { screen: DetailsScreen },
     import: { screen: ImportScreen }
   },
