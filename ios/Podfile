@@ -1,40 +1,24 @@
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
-target 'CredMaker' do
+target 'Pickles' do
   config = use_native_modules!
+
   use_react_native!(:path => config["reactNativePath"])
-  
-  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
-  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
-  permissions_path = '../node_modules/react-native-permissions/ios'
-  pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
-
-  target 'CredMakerTests' do
+  target 'PicklesTests' do
     inherit! :complete
     # Pods for testing
   end
 
-end
-
-target 'CredMaker-tvOS' do
-  # Pods for CredMaker-tvOS
-
-  target 'CredMaker-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  use_flipper!
+  post_install do |installer|
+    flipper_post_install(installer)
   end
-
 end
-
-# TODO: add this back to clean up build warnings
-#post_install do |pi|
-#    pi.pods_project.targets.each do |t|
-#        t.build_configurations.each do |config|
-#            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
-#        end
-#    end
-#end
