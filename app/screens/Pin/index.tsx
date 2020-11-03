@@ -10,7 +10,7 @@ export const PinScreen: FunctionComponent<PinScreenProps> = ({
   return (
     <SafeAreaView style={styles.root}>
       <Text preset="title">There will be pin...</Text>
-      <TouchableOpacity onPress={() => navigation.replace('MainTabs')}>
+      <TouchableOpacity onPress={() => navigation.navigate('MainTabs')}>
         <Text>Verify!</Text>
       </TouchableOpacity>
     </SafeAreaView>

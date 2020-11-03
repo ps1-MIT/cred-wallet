@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { PinScreen } from '../screens';
 import { MainTabNavigator } from './main-tab-navigator';
 import { WITHOUT_HEADER_OPTIONS } from './options';
+import { navigationRef } from '../services/navigator';
 
 export type RootParams = {
   Pin: undefined;
@@ -14,7 +15,7 @@ export type RootParams = {
 const Stack = createNativeStackNavigator<RootParams>();
 
 const RootNavigator = () => (
-  <NavigationContainer>
+  <NavigationContainer ref={navigationRef}>
     <Stack.Navigator>
       <Stack.Screen
         name="Pin"

@@ -1,6 +1,7 @@
 import { AppState, AppStateStatus } from 'react-native';
 import { eventChannel } from 'redux-saga';
 import { take, call, cancelled } from 'redux-saga/effects';
+import { StaticNavigator } from '../../services/navigator';
 
 function createAppStateChannel() {
   return eventChannel((emit: (nextState: AppStateStatus) => void) => {
@@ -17,8 +18,7 @@ export function* appStateListenerSaga(): Generator<any, any, any> {
     while (true) {
       const nextAppState: AppStateStatus = yield take(appStateChannel);
       if (nextAppState === 'active') {
-        console.log('The app is active!');
-        // Do something, like syncing with server
+        yield call(StaticNavigator.navigateTo, 'Pin');
       }
     }
   } finally {
