@@ -6,13 +6,21 @@ import {
   StoreEnhancer,
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import AsyncStorage from '@react-native-community/async-storage';
+import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
 import reactotron from '../services/reactotron';
 import { userReducer } from './user';
 import rootSaga from '../sagas';
 
 export const rootReducer = combineReducers({ user: userReducer });
 
-//TODO: persistConfig
+const persistConfig: PersistConfig<ReturnType<typeof rootReducer>> = {
+  key: 'root',
+  storage: AsyncStorage,
+  blacklist: [],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -26,11 +34,11 @@ if (reactotron) {
   enhancers.push(reactotron?.createEnhancer!());
 }
 
-export const store = createStore(rootReducer, compose(...enhancers));
+export const store = createStore(persistedReducer, compose(...enhancers));
 
 sagaMiddleware.run(rootSaga);
 
-//TODO: persistStore
+persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 
