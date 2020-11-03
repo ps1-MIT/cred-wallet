@@ -1,9 +1,6 @@
-import { GeneralApiProblem } from "./api-problem"
-
 export interface User {
-  id: number
-  name: string
+  id: string;
+  firstName: string;
+  lastName: string;
+  image?: string;
 }
-
-export type GetUsersResult = { kind: "ok"; users: User[] } | GeneralApiProblem
-export type GetUserResult = { kind: "ok"; user: User } | GeneralApiProblem
