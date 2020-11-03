@@ -1,10 +1,18 @@
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import {
+  applyMiddleware,
+  combineReducers,
+  compose,
+  createStore,
+  StoreEnhancer,
+} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { reactotron } from '../services/reactotron';
+import reactotron from '../services/reactotron';
 import { userReducer } from './user';
 import rootSaga from '../sagas';
 
 export const rootReducer = combineReducers({ user: userReducer });
+
+//TODO: persistConfig
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -12,12 +20,18 @@ const sagaMonitor = reactotron?.createSagaMonitor!();
 
 const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
-const enhancer = compose(applyMiddleware(sagaMiddleware), reactotron?.createEnhancer!());
+const enhancers: StoreEnhancer[] = [applyMiddleware(sagaMiddleware)];
 
-export const store = createStore(rootReducer, enhancer);
+if (reactotron) {
+  enhancers.push(reactotron?.createEnhancer!());
+}
+
+export const store = createStore(rootReducer, compose(...enhancers));
+
+sagaMiddleware.run(rootSaga);
+
+//TODO: persistStore
 
 export type AppDispatch = typeof store.dispatch;
 
 export type AppAction = ReturnType<AppDispatch>;
-
-sagaMiddleware.run(rootSaga);
