@@ -1,11 +1,11 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 import COLORS from '../../utils/colors';
 
-interface InitialScreenStyles {
+interface PinScreenStyles {
   root: ViewStyle;
 }
 
-export const styles = StyleSheet.create<InitialScreenStyles>({
+export const styles = StyleSheet.create<PinScreenStyles>({
   root: {
     flex: 1,
     backgroundColor: COLORS.WHITE,
