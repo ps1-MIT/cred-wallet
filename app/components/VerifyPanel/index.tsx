@@ -46,6 +46,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
 
   const onPinAction = useCallback(() => {
     console.tron.log('enteredPin', enteredPin);
+    //TODO
     onVerifySuccess();
     setEnteredPin('');
   }, [enteredPin, setEnteredPin]);
@@ -59,12 +60,10 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     <View style={styles.container}>
       <View style={styles.panelHeaderContainer}>
         <Text style={styles.panelHeaderTitle}>Enter your PIN code</Text>
-        <View style={styles.panelHeaderAnimatedDotsContainer}>
-          <DotsProgress
-            filledDotsAmount={enteredPin.length}
-            dotsAmount={PIN_LENGTH}
-          />
-        </View>
+        <DotsProgress
+          filledDotsAmount={enteredPin.length}
+          dotsAmount={PIN_LENGTH}
+        />
       </View>
       <FlatList
         data={CIPHERS_BY_ROWS}

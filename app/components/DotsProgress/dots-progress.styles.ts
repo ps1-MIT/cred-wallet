@@ -11,6 +11,7 @@ export const styles = StyleSheet.create<DotsProgressStyles>({
   container: {
     flexDirection: 'row',
     width: '100%',
+    justifyContent: 'center',
   },
   dotContainer: {
     width: 10,
