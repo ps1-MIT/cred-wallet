@@ -5,4 +5,5 @@ export interface VerifyPanelProps {
 export interface CipherRowProps {
   ciphers: number[];
   onCipherPress: (cipher: number) => void;
+  isDisabled: boolean;
 }
