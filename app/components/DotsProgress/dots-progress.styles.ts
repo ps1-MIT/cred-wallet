@@ -1,13 +1,13 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 import { COLORS } from '../../utils/colors';
 
-interface AnimatedDotsStyles {
+interface DotsProgressStyles {
   container: ViewStyle;
   dotContainer: ViewStyle;
   activeDotContainer: ViewStyle;
 }
 
-export const styles = StyleSheet.create<AnimatedDotsStyles>({
+export const styles = StyleSheet.create<DotsProgressStyles>({
   container: {
     flexDirection: 'row',
     width: '100%',

@@ -2,10 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text } from 'react-native';
 import _ from 'lodash';
 
-import { AnimatedDots } from '../AnimatedDots';
 import { CIPHERS_BY_ROWS, PIN_LENGTH } from './verify-panel.options';
 import { CipherRowProps, VerifyPanelProps } from './verify-panel.props';
 import { styles, cipherRowStyles } from './verify-panel.styles';
+import { DotsProgress } from '../DotsProgress';
 
 const CipherRow: React.FunctionComponent<CipherRowProps> = ({
   ciphers,
@@ -60,7 +60,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       <View style={styles.panelHeaderContainer}>
         <Text style={styles.panelHeaderTitle}>Enter your PIN code</Text>
         <View style={styles.panelHeaderAnimatedDotsContainer}>
-          <AnimatedDots
+          <DotsProgress
             filledDotsAmount={enteredPin.length}
             dotsAmount={PIN_LENGTH}
           />

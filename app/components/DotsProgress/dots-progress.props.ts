@@ -1,8 +1,8 @@
-export interface AnimatedDotsProps {
+export interface DotsProgressProps {
   dotsAmount: number;
   filledDotsAmount: number;
 }
 
-export interface AnimatedDotProps {
+export interface DotProps {
   isFilled: boolean;
 }

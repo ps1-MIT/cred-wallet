@@ -1,14 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Animated, View } from 'react-native';
 import _ from 'lodash';
 
-import { AnimatedDotsProps, AnimatedDotProps } from './animated-dots.props';
-import { styles } from './animated-dots.styles';
+import { DotsProgressProps, DotProps } from './dots-progress.props';
+import { styles } from './dots-progress.styles';
 
 //TODO: animation
-const AnimatedDot: React.FunctionComponent<AnimatedDotProps> = ({
-  isFilled,
-}) => {
+const DotView: React.FunctionComponent<DotProps> = ({ isFilled }) => {
   // const animatedView = useRef(new Animated.Value(0));
 
   return (
@@ -18,14 +16,14 @@ const AnimatedDot: React.FunctionComponent<AnimatedDotProps> = ({
   );
 };
 
-export const AnimatedDots: React.FunctionComponent<AnimatedDotsProps> = ({
+export const DotsProgress: React.FunctionComponent<DotsProgressProps> = ({
   dotsAmount,
   filledDotsAmount,
 }) => {
   return (
     <View style={styles.container}>
       {_.map(new Array(dotsAmount), (el, index) => (
-        <AnimatedDot isFilled={index < filledDotsAmount} key={`dot-${index}`} />
+        <DotView isFilled={index < filledDotsAmount} key={`dot-${index}`} />
       ))}
     </View>
   );
