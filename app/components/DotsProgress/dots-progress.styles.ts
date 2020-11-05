@@ -16,7 +16,7 @@ export const styles = StyleSheet.create<DotsProgressStyles>({
   dotContainer: {
     width: 10,
     height: 10,
-    marginRight: 10,
+    marginHorizontal: 5,
     borderRadius: 5,
     borderWidth: 1,
     borderColor: COLORS.BLACK,
