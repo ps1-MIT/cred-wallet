@@ -12,6 +12,7 @@ import { CipherRowProps, VerifyPanelProps } from './verify-panel.props';
 import { styles, cipherRowStyles } from './verify-panel.styles';
 import { DotsProgress } from '../DotsProgress';
 import { VerifyPanelStatus } from '../../utils/types';
+import { Keystore } from '../../services/keychain';
 
 const CipherRow: React.FunctionComponent<CipherRowProps> = ({
   ciphers,
@@ -31,7 +32,7 @@ const CipherRow: React.FunctionComponent<CipherRowProps> = ({
         </TouchableOpacity>
       );
     },
-    [onCipherPress],
+    [onCipherPress, isDisabled],
   );
 
   return (
@@ -41,9 +42,16 @@ const CipherRow: React.FunctionComponent<CipherRowProps> = ({
   );
 };
 
+//TODO: remove resetPin
+// if (__DEV__) {
+//   Keystore.resetPin();
+// }
+
 export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   onVerifySuccess,
 }) => {
+  /* ------ State ------ */
+
   const [panelStatus, setPanelStatus] = useState<VerifyPanelStatus>(
     PANEL_STATUS.UNDEFINED,
   );
@@ -53,22 +61,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     false,
   );
 
-  useEffect(() => {
-    if (enteredPin.length === PIN_LENGTH) {
-      switch (panelStatus) {
-        case PANEL_STATUS.PIN_CREATE:
-          setIsEnterPinAvailable(false);
-          setPanelStatus(PANEL_STATUS.SAVE_PIN_KEYCHAIN);
-          break;
-        case PANEL_STATUS.PIN_ENTER:
-          setIsEnterPinAvailable(false);
-          setPanelStatus(PANEL_STATUS.PIN_VERIFY);
-          break;
-      }
-
-      setEnteredPin('');
-    }
-  }, [enteredPin]);
+  /* ----- Flow parts ------ */
 
   const checkTouchID = useCallback(() => {
     TouchID.isSupported()
@@ -83,9 +76,19 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   }, [setPanelStatus]);
 
   const checkPinKeychain = useCallback(() => {
-    //TODO if pin exists in keychain -> setPinForCheck, setPanelStatus(PANES_STATUS.PIN_ENTER)
-    //     else setPanelStatus(PANEL_STATUS.PIN_CREATE), setPinKeychain
-  }, [setPanelStatus]);
+    Keystore.getPin()
+      // Got the key from keystore
+      .then((pin) => {
+        console.tron.log('checkPinKeychain GOT IT!', pin);
+        setKeychainPin(pin);
+        setPanelStatus(PANEL_STATUS.PIN_ENTER);
+      })
+      // Key does not present
+      .catch((err) => {
+        console.tron.log('checkPinKeychain err', err);
+        setPanelStatus(PANEL_STATUS.PIN_CREATE);
+      });
+  }, [setPanelStatus, setKeychainPin]);
 
   const activatePinInput = useCallback(() => setIsEnterPinAvailable(true), [
     setPanelStatus,
@@ -93,14 +96,22 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   ]);
 
   const savePinToKeychain = useCallback(() => {
-    //TODO KeychainPinSave
-    setPanelStatus(PANEL_STATUS.PIN_ENTER);
-  }, [setPanelStatus]);
+    Keystore.savePin(enteredPin).then(() => {
+      console.tron.log('Pin saved to keystore!');
+      setKeychainPin(enteredPin);
+      setEnteredPin('');
+      setPanelStatus(PANEL_STATUS.PIN_ENTER);
+    });
+  }, [enteredPin, setPanelStatus, setKeychainPin]);
 
   const verifyEnteredPin = useCallback(() => {
-    //TODO get pin Keychain if success -> setPanelStatus(PANEL_STATUS.VERIFIED)
-    //     else -> nothing (wrong attempt)
-  }, [enteredPin, setPanelStatus]);
+    if (keychainPin === enteredPin) {
+      setPanelStatus(PANEL_STATUS.VERIFIED);
+    } else {
+      setEnteredPin('');
+      setPanelStatus(PANEL_STATUS.PIN_ENTER);
+    }
+  }, [enteredPin, keychainPin, setPanelStatus]);
 
   const launchTouchID = useCallback(() => {
     const optionalConfigObject = {
@@ -122,6 +133,22 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
         setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN);
       });
   }, [setPanelStatus]);
+
+  /* ------ Main flow useEffects ------ */
+
+  useEffect(() => {
+    if (enteredPin.length === PIN_LENGTH) {
+      switch (panelStatus) {
+        case PANEL_STATUS.PIN_CREATE:
+          setIsEnterPinAvailable(false);
+          setPanelStatus(PANEL_STATUS.SAVE_PIN_KEYCHAIN);
+          break;
+        case PANEL_STATUS.PIN_ENTER:
+          setPanelStatus(PANEL_STATUS.PIN_VERIFY);
+          break;
+      }
+    }
+  }, [enteredPin]);
 
   useEffect(() => {
     switch (panelStatus) {
@@ -150,6 +177,8 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     }
   }, [panelStatus]);
 
+  /* ------ UI callbacks ------ */
+
   const onCipherPress = useCallback(
     (cipher: number) => setEnteredPin(enteredPin + cipher),
     [enteredPin, setEnteredPin],
@@ -162,6 +191,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       case PANEL_STATUS.PIN_CREATE:
         return 'Create PIN';
       case PANEL_STATUS.PIN_ENTER:
+      case PANEL_STATUS.PIN_VERIFY:
         return 'Enter PIN';
       case PANEL_STATUS.TOUCH_ID:
         return 'Touch ID';
@@ -188,6 +218,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
             isDisabled={!isEnterPinAvailable}
           />
         )}
+        extraData={isEnterPinAvailable}
         keyExtractor={(item, index) => `cipher-row-${item.join()}-${index}`}
         scrollEnabled={false}
         contentContainerStyle={styles.listContentContainer}
