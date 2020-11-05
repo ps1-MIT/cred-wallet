@@ -178,7 +178,6 @@
 				96432F85DD78641B9DE12738 /* Pods-CredWallet-CredWalletTests.debug.xcconfig */,
 				A64D3029D8FCC69ED59297A9 /* Pods-CredWallet-CredWalletTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
