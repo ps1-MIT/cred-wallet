@@ -18,7 +18,7 @@ export function* appStateListenerSaga(): Generator<any, any, any> {
     while (true) {
       const nextAppState: AppStateStatus = yield take(appStateChannel);
       if (nextAppState === 'active') {
-        yield call(StaticNavigator.navigateTo, 'Pin');
+        yield call(StaticNavigator.push, 'Pin', { isPushed: true });
       }
     }
   } finally {

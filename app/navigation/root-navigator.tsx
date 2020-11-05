@@ -8,7 +8,7 @@ import { WITHOUT_HEADER_OPTIONS } from './options';
 import { navigationRef } from '../services/navigator';
 
 export type RootParams = {
-  Pin: undefined;
+  Pin: { isPushed: boolean };
   MainTabs: undefined;
 };
 
