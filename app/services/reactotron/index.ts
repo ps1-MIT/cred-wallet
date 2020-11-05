@@ -8,8 +8,8 @@ let reactotron: Reactotron<ReactotronReactNative> | undefined;
 
 __DEV__ &&
   (function reactotronSetup() {
-    reactotron = RNReactotron.configure() //
-      .useReactNative().setAsyncStorageHandler!(AsyncStorage)
+    reactotron = RNReactotron.configure().useReactNative()
+      .setAsyncStorageHandler!(AsyncStorage)
       .use(reactotronRedux())
       .use(sagaPlugin({}))
       .connect();

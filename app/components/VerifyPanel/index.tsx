@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text } from 'react-native';
+import TouchID from 'react-native-touch-id';
 import _ from 'lodash';
 
 import {
@@ -46,6 +47,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   const [panelStatus, setPanelStatus] = useState<VerifyPanelStatus>(
     PANEL_STATUS.UNDEFINED,
   );
+  const [keychainPin, setKeychainPin] = useState<string | null>(null);
   const [enteredPin, setEnteredPin] = useState<string>('');
   const [isEnterPinAvailable, setIsEnterPinAvailable] = useState<boolean>(
     false,
@@ -69,8 +71,15 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   }, [enteredPin]);
 
   const checkTouchID = useCallback(() => {
-    //TODO if touchID -> setPanelStatus(PANEL_STATUS.TOUCH_ID);
-    //     else setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN);
+    TouchID.isSupported()
+      .then((biometryType) => {
+        console.tron.log('TouchID is available:', biometryType);
+        setPanelStatus(PANEL_STATUS.TOUCH_ID);
+      })
+      .catch((error) => {
+        console.tron.log('TouchID is unavailable:', error);
+        setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN);
+      });
   }, [setPanelStatus]);
 
   const checkPinKeychain = useCallback(() => {
@@ -94,8 +103,24 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   }, [enteredPin, setPanelStatus]);
 
   const launchTouchID = useCallback(() => {
-    //TODO if touchID success -> setPanelStatus(PANEL_STATUS.VERIFIED)
-    //     else setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN)
+    const optionalConfigObject = {
+      title: 'Authentication Required', // Android
+      imageColor: '#e00606', // Android
+      imageErrorColor: '#ff0000', // Android
+      sensorDescription: 'Touch sensor', // Android
+      sensorErrorDescription: 'Failed', // Android
+      cancelText: 'Cancel', // Android
+      fallbackLabel: 'Show Passcode', // iOS (if empty, then label is hidden)
+      unifiedErrors: false, // use unified error messages (default false)
+      passcodeFallback: false, // iOS - allows the device to fall back to using the passcode, if faceid/touch is not available. this does not mean that if touchid/faceid fails the first few times it will revert to passcode, rather that if the former are not enrolled, then it will use the passcode.
+    };
+
+    TouchID.authenticate('To access your accounts', optionalConfigObject)
+      .then(() => setPanelStatus(PANEL_STATUS.VERIFIED))
+      .catch((error: any) => {
+        console.tron.log('TouchID failed', error);
+        setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN);
+      });
   }, [setPanelStatus]);
 
   useEffect(() => {
