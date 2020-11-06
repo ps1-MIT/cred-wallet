@@ -20,14 +20,11 @@ const Stack = createStackNavigator<RootParams>();
 
 const RootNavigator = () => (
   <NavigationContainer ref={navigationRef}>
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={TransitionPresets.FadeFromBottomAndroid}>
       <Stack.Screen
         name="Pin"
         component={PinScreen}
-        options={{
-          ...WITHOUT_HEADER_OPTIONS,
-          ...TransitionPresets.FadeFromBottomAndroid,
-        }}
+        options={WITHOUT_HEADER_OPTIONS}
       />
       <Stack.Screen
         name="MainTabs"
