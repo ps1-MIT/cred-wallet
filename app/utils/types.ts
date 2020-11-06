@@ -7,3 +7,5 @@ export type VerifyPanelStatus =
   | 'pin-verify'
   | 'touch-id'
   | 'verified';
+
+export interface ICredential {}

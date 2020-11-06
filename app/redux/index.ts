@@ -9,10 +9,16 @@ import createSagaMiddleware from 'redux-saga';
 import AsyncStorage from '@react-native-community/async-storage';
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
 import reactotron from '../services/reactotron';
-import { userReducer } from './user';
 import rootSaga from '../sagas';
 
-export const rootReducer = combineReducers({ user: userReducer });
+// Reducers
+import { userReducer } from './user';
+import { credentialsReducer } from './credentials';
+
+export const rootReducer = combineReducers({
+  user: userReducer,
+  credentials: credentialsReducer,
+});
 
 const persistConfig: PersistConfig<ReturnType<typeof rootReducer>> = {
   key: 'root',
