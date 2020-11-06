@@ -1,5 +1,8 @@
 import React from 'react';
-import { NavigationContainerRef } from '@react-navigation/native';
+import {
+  NavigationContainerRef,
+  NavigationState,
+} from '@react-navigation/native';
 import { StackActions } from '@react-navigation/native';
 import { Action } from 'redux';
 
@@ -22,6 +25,12 @@ export class StaticNavigator {
     if (navigationRef?.current) {
       const pushAction = StackActions.push(routeName, params);
       navigationRef.current.dispatch(pushAction);
+    }
+  }
+
+  static getCurretRoute() {
+    if (navigationRef?.current) {
+      return navigationRef.current.getCurrentRoute();
     }
   }
 }
