@@ -80,8 +80,12 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       // Got the key from keystore
       .then((pin) => {
         console.tron.log('checkPinKeychain GOT IT!', pin);
-        setKeychainPin(pin);
-        setPanelStatus(PANEL_STATUS.PIN_ENTER);
+        if (pin) {
+          setKeychainPin(pin);
+          setPanelStatus(PANEL_STATUS.PIN_ENTER);
+        } else {
+          setPanelStatus(PANEL_STATUS.PIN_CREATE);
+        }
       })
       // Key does not present
       .catch((err) => {
