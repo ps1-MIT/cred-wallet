@@ -35,8 +35,8 @@ const signCredentialSuccess: Handler<SignCredentialSuccessAction> = (
     ...state,
     isLoading: false,
     data: [...state.data, credential],
-  }
-});
+  };
+};
 
 const signCredentialFailure: Handler<SignCredentialFailureAction> = (
   state,
@@ -47,11 +47,11 @@ const signCredentialFailure: Handler<SignCredentialFailureAction> = (
   error,
 });
 
-export const credentialsReducer = createReducer<CredentialsState, CredentialsAction>(
-  INITIAL_STATE,
-  {
-    [credentialsActionTypes.SIGN_CREDENTIAL]: signCredential,
-    [credentialsActionTypes.SIGN_CREDENTIAL_SUCCESS]: signCredentialSuccess,
-    [credentialsActionTypes.SIGN_CREDENTIAL_FAILURE]: signCredentialFailure,
-  },
-);
+export const credentialsReducer = createReducer<
+  CredentialsState,
+  CredentialsAction
+>(INITIAL_STATE, {
+  [credentialsActionTypes.SIGN_CREDENTIAL]: signCredential,
+  [credentialsActionTypes.SIGN_CREDENTIAL_SUCCESS]: signCredentialSuccess,
+  [credentialsActionTypes.SIGN_CREDENTIAL_FAILURE]: signCredentialFailure,
+});
