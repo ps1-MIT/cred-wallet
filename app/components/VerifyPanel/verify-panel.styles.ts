@@ -36,6 +36,7 @@ export const styles = StyleSheet.create<VerifyPanelStyles>({
 
 interface CipherRowStyles {
   container: ViewStyle;
+  emptyContainer: ViewStyle;
   cipherContainer: ViewStyle;
   cipherText: TextStyle;
 }
@@ -46,6 +47,12 @@ export const cipherRowStyles = StyleSheet.create<CipherRowStyles>({
     width: '100%',
     justifyContent: 'space-evenly',
     marginVertical: 10,
+  },
+  emptyContainer: {
+    width: 75,
+    height: 75,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cipherContainer: {
     width: 75,

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text } from 'react-native';
 import TouchID from 'react-native-touch-id';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import _ from 'lodash';
 
 import {
@@ -18,7 +19,10 @@ const CipherRow: React.FunctionComponent<CipherRowProps> = ({
   ciphers,
   isDisabled,
   onCipherPress,
+  onRemovePress = _.noop,
 }) => {
+  const [isLatestRow] = useState<boolean>(ciphers.length < 3);
+
   const renderCipherCell = useCallback(
     (cipher: number) => {
       return (
@@ -35,17 +39,31 @@ const CipherRow: React.FunctionComponent<CipherRowProps> = ({
     [onCipherPress, isDisabled],
   );
 
+  const renderEmptyCell = useCallback(
+    () => <View style={cipherRowStyles.emptyContainer} />,
+    [],
+  );
+
+  const renderRemoveCell = useCallback(
+    () => (
+      <TouchableOpacity
+        style={cipherRowStyles.emptyContainer}
+        onPress={onRemovePress}
+      >
+        <Icon name="close" size={50} />
+      </TouchableOpacity>
+    ),
+    [onRemovePress],
+  );
+
   return (
     <View style={cipherRowStyles.container}>
+      {isLatestRow && renderEmptyCell()}
       {_.map(ciphers, renderCipherCell)}
+      {isLatestRow && renderRemoveCell()}
     </View>
   );
 };
-
-//TODO: remove resetPin
-// if (__DEV__) {
-//   Keystore.resetPin();
-// }
 
 export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   onVerifySuccess,
@@ -183,6 +201,11 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
 
   /* ------ UI callbacks ------ */
 
+  const onRemovePress = useCallback(() => {
+    console.tron.log('onRemovePress', enteredPin, enteredPin.slice(0, -1));
+    setEnteredPin(enteredPin.slice(0, -1));
+  }, [enteredPin, setEnteredPin]);
+
   const onCipherPress = useCallback(
     (cipher: number) => setEnteredPin(enteredPin + cipher),
     [enteredPin, setEnteredPin],
@@ -219,6 +242,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
           <CipherRow
             ciphers={ciphers}
             onCipherPress={onCipherPress}
+            onRemovePress={onRemovePress}
             isDisabled={!isEnterPinAvailable}
           />
         )}
