@@ -1,6 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from 'react-native-screens/native-stack';
+import {
+  createStackNavigator,
+  TransitionPresets,
+} from '@react-navigation/stack';
+// import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import { PinScreen } from '../screens';
 import { MainTabNavigator } from './main-tab-navigator';
@@ -12,7 +16,7 @@ export type RootParams = {
   MainTabs: undefined;
 };
 
-const Stack = createNativeStackNavigator<RootParams>();
+const Stack = createStackNavigator<RootParams>();
 
 const RootNavigator = () => (
   <NavigationContainer ref={navigationRef}>
@@ -20,7 +24,10 @@ const RootNavigator = () => (
       <Stack.Screen
         name="Pin"
         component={PinScreen}
-        options={WITHOUT_HEADER_OPTIONS}
+        options={{
+          ...WITHOUT_HEADER_OPTIONS,
+          ...TransitionPresets.FadeFromBottomAndroid,
+        }}
       />
       <Stack.Screen
         name="MainTabs"

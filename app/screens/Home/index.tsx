@@ -16,11 +16,6 @@ export const HomeScreen: FunctionComponent<HomeScreenProps> = ({
       <View style={styles.body}>
         <Text preset="title">IvorySoft</Text>
         <Text preset="default">ReactNative Boilerplate</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Pin')}>
-          <Text preset="secondary" style={styles.description}>
-            Test navigation to Settings: {user ? 'exist' : 'null'}
-          </Text>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

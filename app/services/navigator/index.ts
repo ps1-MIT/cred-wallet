@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  NavigationContainerRef,
-  NavigationState,
-} from '@react-navigation/native';
+import { NavigationContainerRef } from '@react-navigation/native';
 import { StackActions } from '@react-navigation/native';
 import { Action } from 'redux';
 
