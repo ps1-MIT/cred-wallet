@@ -1,5 +1,5 @@
 export type VerifyPanelStatus =
-  | 'undefined'
+  | 'check-biometric-verify'
   | 'check-pin-keychain'
   | 'pin-create'
   | 'save-pin-keychain'

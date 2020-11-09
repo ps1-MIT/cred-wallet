@@ -15,7 +15,7 @@ export const CIPHERS_BY_ROWS: number[][] = [
 export const PIN_LENGTH = 4;
 
 type VerifyPanelStatusKeys =
-  | 'UNDEFINED'
+  | 'CHECK_BIOMETRIC_VERIFY'
   | 'CHECK_PIN_KEYCHAIN'
   | 'PIN_CREATE'
   | 'SAVE_PIN_KEYCHAIN'
@@ -24,7 +24,7 @@ type VerifyPanelStatusKeys =
   | 'BIOMETRIC_VERIFY'
   | 'VERIFIED';
 export const PANEL_STATUS: Record<VerifyPanelStatusKeys, VerifyPanelStatus> = {
-  UNDEFINED: 'undefined',
+  CHECK_BIOMETRIC_VERIFY: 'check-biometric-verify',
   CHECK_PIN_KEYCHAIN: 'check-pin-keychain',
   PIN_CREATE: 'pin-create',
   SAVE_PIN_KEYCHAIN: 'save-pin-keychain',

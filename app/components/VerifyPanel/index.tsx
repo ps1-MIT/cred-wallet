@@ -15,6 +15,8 @@ import { DotsProgress } from '../DotsProgress';
 import { VerifyPanelStatus } from '../../utils/types';
 import { Keystore } from '../../services/keychain';
 
+// Keystore.resetPin();
+
 const CipherRow: React.FunctionComponent<CipherRowProps> = ({
   ciphers,
   isDisabled,
@@ -70,8 +72,9 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
 }) => {
   /* ------ State ------ */
 
+  const [biometricType, setBiometricType] = useState<string | null>(null);
   const [panelStatus, setPanelStatus] = useState<VerifyPanelStatus>(
-    PANEL_STATUS.UNDEFINED,
+    PANEL_STATUS.CHECK_PIN_KEYCHAIN,
   );
   const [keychainPin, setKeychainPin] = useState<string | null>(null);
   const [enteredPin, setEnteredPin] = useState<string>('');
@@ -85,13 +88,14 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     TouchID.isSupported()
       .then((biometryType) => {
         console.tron.log('TouchID is available:', biometryType);
+        setBiometricType(biometryType);
         setPanelStatus(PANEL_STATUS.BIOMETRIC_VERIFY);
       })
       .catch((error) => {
         console.tron.log('TouchID is unavailable:', error);
-        setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN);
+        setPanelStatus(PANEL_STATUS.PIN_ENTER);
       });
-  }, [setPanelStatus]);
+  }, [setPanelStatus, setBiometricType]);
 
   const checkPinKeychain = useCallback(() => {
     Keystore.getPin()
@@ -100,7 +104,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
         console.tron.log('checkPinKeychain GOT IT!', pin);
         if (pin) {
           setKeychainPin(pin);
-          setPanelStatus(PANEL_STATUS.PIN_ENTER);
+          setPanelStatus(PANEL_STATUS.CHECK_BIOMETRIC_VERIFY);
         } else {
           setPanelStatus(PANEL_STATUS.PIN_CREATE);
         }
@@ -122,7 +126,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       console.tron.log('Pin saved to keystore!');
       setKeychainPin(enteredPin);
       setEnteredPin('');
-      setPanelStatus(PANEL_STATUS.PIN_ENTER);
+      setPanelStatus(PANEL_STATUS.CHECK_BIOMETRIC_VERIFY);
     });
   }, [enteredPin, setPanelStatus, setKeychainPin]);
 
@@ -152,7 +156,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       .then(() => setPanelStatus(PANEL_STATUS.VERIFIED))
       .catch((error: any) => {
         console.tron.log('TouchID failed', error);
-        setPanelStatus(PANEL_STATUS.CHECK_PIN_KEYCHAIN);
+        setPanelStatus(PANEL_STATUS.PIN_ENTER);
       });
   }, [setPanelStatus]);
 
@@ -175,18 +179,21 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   useEffect(() => {
     switch (panelStatus) {
       default:
-      case PANEL_STATUS.UNDEFINED:
-        checkBiometricVerify();
-        break;
       case PANEL_STATUS.CHECK_PIN_KEYCHAIN:
         checkPinKeychain();
         break;
       case PANEL_STATUS.PIN_CREATE:
-      case PANEL_STATUS.PIN_ENTER:
         activatePinInput();
         break;
       case PANEL_STATUS.SAVE_PIN_KEYCHAIN:
         savePinToKeychain();
+        break;
+      case PANEL_STATUS.CHECK_BIOMETRIC_VERIFY:
+        checkBiometricVerify();
+        break;
+      case PANEL_STATUS.PIN_ENTER:
+        activatePinInput();
+        break;
       case PANEL_STATUS.PIN_VERIFY:
         verifyEnteredPin();
         break;
