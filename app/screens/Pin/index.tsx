@@ -1,5 +1,7 @@
 import React, { FunctionComponent, useCallback } from 'react';
 import { SafeAreaView } from 'react-native';
+import { BlurView } from '@react-native-community/blur';
+
 import { VerifyPanel } from '../../components';
 import { PinScreenProps } from './pin.props';
 import { styles } from './pin.styles';
@@ -18,8 +20,10 @@ export const PinScreen: FunctionComponent<PinScreenProps> = ({
   }, [navigation, route.params]);
 
   return (
-    <SafeAreaView style={styles.root}>
-      <VerifyPanel onVerifySuccess={onVerifySuccess} />
-    </SafeAreaView>
+    <BlurView style={styles.container} blurAmount={5} blurType="light">
+      <SafeAreaView style={styles.safeAreaContainer}>
+        <VerifyPanel onVerifySuccess={onVerifySuccess} />
+      </SafeAreaView>
+    </BlurView>
   );
 };
