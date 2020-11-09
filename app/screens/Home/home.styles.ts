@@ -5,6 +5,8 @@ interface HomeScreenStyles {
   root: ViewStyle;
   body: ViewStyle;
   description: TextStyle;
+  listContainer: ViewStyle;
+  stubContainer: ViewStyle;
 }
 
 export const styles = StyleSheet.create<HomeScreenStyles>({
@@ -13,9 +15,20 @@ export const styles = StyleSheet.create<HomeScreenStyles>({
     backgroundColor: COLORS.WHITE,
   },
   body: {
-    padding: 20,
+    flex: 1,
   },
   description: {
     marginTop: 15,
+  },
+  listContainer: {
+    flex: 1,
+
+    padding: 20,
+  },
+  stubContainer: {
+    flex: 1,
+    height: 150,
+    borderRadius: 14,
+    margin: 10,
   },
 });

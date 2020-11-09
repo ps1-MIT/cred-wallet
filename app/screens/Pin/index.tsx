@@ -20,7 +20,7 @@ export const PinScreen: FunctionComponent<PinScreenProps> = ({
   }, [navigation, route.params]);
 
   return (
-    <BlurView style={styles.container} blurAmount={5} blurType="light">
+    <BlurView style={styles.container} blurAmount={10} blurType="light">
       <SafeAreaView style={styles.safeAreaContainer}>
         <VerifyPanel onVerifySuccess={onVerifySuccess} />
       </SafeAreaView>
