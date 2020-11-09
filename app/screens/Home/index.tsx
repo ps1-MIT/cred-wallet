@@ -15,7 +15,9 @@ export const HomeScreen: FunctionComponent<HomeScreenProps> = ({
     <SafeAreaView style={styles.root}>
       <View style={styles.body}>
         <Text preset="title">IvorySoft</Text>
-        <Text preset="default">ReactNative Boilerplate</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('QRScanner')}>
+          <Text preset="default">ReactNative Boilerplate</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
