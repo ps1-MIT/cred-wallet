@@ -15,9 +15,8 @@ export const HomeScreen: FunctionComponent<HomeScreenProps> = ({
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.body}>
-        <Text preset="title">IvorySoft</Text>
         <TouchableOpacity onPress={() => navigation.navigate('QRScanner')}>
-          <Text preset="default">ReactNative Boilerplate</Text>
+          <Text preset="default">Navigate to QRScanner</Text>
         </TouchableOpacity>
         {/* TODO: remove this FlatList */}
         <FlatList
