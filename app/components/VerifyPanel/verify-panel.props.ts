@@ -4,7 +4,9 @@ export interface VerifyPanelProps {
 
 export interface CipherRowProps {
   ciphers: number[];
-  onCipherPress: (cipher: number) => void;
+  biometricType?: string | null;
   isDisabled: boolean;
+  onCipherPress: (cipher: number) => void;
   onRemovePress?: () => void;
+  onBiometricPress?: () => void;
 }

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { View, FlatList, TouchableOpacity, Text } from 'react-native';
+import { View, FlatList, TouchableOpacity, Text, Image } from 'react-native';
 import TouchID from 'react-native-touch-id';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import _ from 'lodash';
@@ -14,14 +14,17 @@ import { styles, cipherRowStyles } from './verify-panel.styles';
 import { DotsProgress } from '../DotsProgress';
 import { VerifyPanelStatus } from '../../utils/types';
 import { Keystore } from '../../services/keychain';
+import { IMAGES } from '../../assets';
 
 // Keystore.resetPin();
 
 const CipherRow: React.FunctionComponent<CipherRowProps> = ({
   ciphers,
+  biometricType,
   isDisabled,
   onCipherPress,
   onRemovePress = _.noop,
+  onBiometricPress = _.noop,
 }) => {
   const [isLatestRow] = useState<boolean>(ciphers.length < 3);
 
@@ -46,21 +49,53 @@ const CipherRow: React.FunctionComponent<CipherRowProps> = ({
     [],
   );
 
+  const renderBiometricCell = useCallback(() => {
+    if (!biometricType) {
+      return renderEmptyCell();
+    }
+
+    let biometricImageSource = null;
+    switch (biometricType) {
+      case 'TouchID':
+        biometricImageSource = IMAGES.FINGERPRINT;
+        break;
+      case 'FaceID':
+        biometricImageSource = IMAGES.FACE_ID;
+        break;
+      default:
+        break;
+    }
+
+    return (
+      <TouchableOpacity
+        disabled={isDisabled}
+        onPress={onBiometricPress}
+        style={cipherRowStyles.emptyContainer}
+      >
+        <Image
+          source={biometricImageSource}
+          style={cipherRowStyles.biometricImage}
+        />
+      </TouchableOpacity>
+    );
+  }, [isDisabled, biometricType, onBiometricPress]);
+
   const renderRemoveCell = useCallback(
     () => (
       <TouchableOpacity
+        disabled={isDisabled}
         style={cipherRowStyles.emptyContainer}
         onPress={onRemovePress}
       >
         <Icon name="close" size={50} />
       </TouchableOpacity>
     ),
-    [onRemovePress],
+    [isDisabled, onRemovePress],
   );
 
   return (
     <View style={cipherRowStyles.container}>
-      {isLatestRow && renderEmptyCell()}
+      {isLatestRow && renderBiometricCell()}
       {_.map(ciphers, renderCipherCell)}
       {isLatestRow && renderRemoveCell()}
     </View>
@@ -208,10 +243,15 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
 
   /* ------ UI callbacks ------ */
 
-  const onRemovePress = useCallback(() => {
-    console.tron.log('onRemovePress', enteredPin, enteredPin.slice(0, -1));
-    setEnteredPin(enteredPin.slice(0, -1));
-  }, [enteredPin, setEnteredPin]);
+  const onBiometricPress = useCallback(
+    () => setPanelStatus(PANEL_STATUS.BIOMETRIC_VERIFY),
+    [setPanelStatus],
+  );
+
+  const onRemovePress = useCallback(
+    () => setEnteredPin(enteredPin.slice(0, -1)),
+    [enteredPin, setEnteredPin],
+  );
 
   const onCipherPress = useCallback(
     (cipher: number) => setEnteredPin(enteredPin + cipher),
@@ -228,7 +268,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       case PANEL_STATUS.PIN_VERIFY:
         return 'Enter PIN';
       case PANEL_STATUS.BIOMETRIC_VERIFY:
-        return 'Touch ID';
+        return 'Biometric Verify';
       case PANEL_STATUS.VERIFIED:
         return 'Verified';
     }
@@ -247,9 +287,13 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
         data={CIPHERS_BY_ROWS}
         renderItem={({ item: ciphers }) => (
           <CipherRow
+            biometricType={
+              panelStatus === PANEL_STATUS.PIN_ENTER ? biometricType : null
+            }
             ciphers={ciphers}
             onCipherPress={onCipherPress}
             onRemovePress={onRemovePress}
+            onBiometricPress={onBiometricPress}
             isDisabled={!isEnterPinAvailable}
           />
         )}

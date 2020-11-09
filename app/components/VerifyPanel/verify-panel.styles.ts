@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { COLORS } from '../../utils/colors';
 
 interface VerifyPanelStyles {
@@ -39,6 +39,7 @@ interface CipherRowStyles {
   emptyContainer: ViewStyle;
   cipherContainer: ViewStyle;
   cipherText: TextStyle;
+  biometricImage: ImageStyle;
 }
 
 export const cipherRowStyles = StyleSheet.create<CipherRowStyles>({
@@ -65,5 +66,9 @@ export const cipherRowStyles = StyleSheet.create<CipherRowStyles>({
   cipherText: {
     textAlign: 'center',
     fontSize: 36,
+  },
+  biometricImage: {
+    width: 75,
+    height: 75,
   },
 });
