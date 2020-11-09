@@ -5,7 +5,7 @@ export type VerifyPanelStatus =
   | 'save-pin-keychain'
   | 'pin-enter'
   | 'pin-verify'
-  | 'touch-id'
+  | 'biometric-verify'
   | 'verified';
 
 export interface ICredential {}

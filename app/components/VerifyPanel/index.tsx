@@ -81,11 +81,11 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
 
   /* ----- Flow parts ------ */
 
-  const checkTouchID = useCallback(() => {
+  const checkBiometricVerify = useCallback(() => {
     TouchID.isSupported()
       .then((biometryType) => {
         console.tron.log('TouchID is available:', biometryType);
-        setPanelStatus(PANEL_STATUS.TOUCH_ID);
+        setPanelStatus(PANEL_STATUS.BIOMETRIC_VERIFY);
       })
       .catch((error) => {
         console.tron.log('TouchID is unavailable:', error);
@@ -135,7 +135,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     }
   }, [enteredPin, keychainPin, setPanelStatus]);
 
-  const launchTouchID = useCallback(() => {
+  const launchBiometricVerify = useCallback(() => {
     const optionalConfigObject = {
       title: 'Authentication Required', // Android
       imageColor: '#e00606', // Android
@@ -176,7 +176,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     switch (panelStatus) {
       default:
       case PANEL_STATUS.UNDEFINED:
-        checkTouchID();
+        checkBiometricVerify();
         break;
       case PANEL_STATUS.CHECK_PIN_KEYCHAIN:
         checkPinKeychain();
@@ -190,8 +190,8 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       case PANEL_STATUS.PIN_VERIFY:
         verifyEnteredPin();
         break;
-      case PANEL_STATUS.TOUCH_ID:
-        launchTouchID();
+      case PANEL_STATUS.BIOMETRIC_VERIFY:
+        launchBiometricVerify();
         break;
       case PANEL_STATUS.VERIFIED:
         onVerifySuccess();
@@ -220,7 +220,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       case PANEL_STATUS.PIN_ENTER:
       case PANEL_STATUS.PIN_VERIFY:
         return 'Enter PIN';
-      case PANEL_STATUS.TOUCH_ID:
+      case PANEL_STATUS.BIOMETRIC_VERIFY:
         return 'Touch ID';
       case PANEL_STATUS.VERIFIED:
         return 'Verified';

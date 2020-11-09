@@ -21,7 +21,7 @@ type VerifyPanelStatusKeys =
   | 'SAVE_PIN_KEYCHAIN'
   | 'PIN_ENTER'
   | 'PIN_VERIFY'
-  | 'TOUCH_ID'
+  | 'BIOMETRIC_VERIFY'
   | 'VERIFIED';
 export const PANEL_STATUS: Record<VerifyPanelStatusKeys, VerifyPanelStatus> = {
   UNDEFINED: 'undefined',
@@ -30,6 +30,6 @@ export const PANEL_STATUS: Record<VerifyPanelStatusKeys, VerifyPanelStatus> = {
   SAVE_PIN_KEYCHAIN: 'save-pin-keychain',
   PIN_ENTER: 'pin-enter',
   PIN_VERIFY: 'pin-verify',
-  TOUCH_ID: 'touch-id',
+  BIOMETRIC_VERIFY: 'biometric-verify',
   VERIFIED: 'verified',
 };
