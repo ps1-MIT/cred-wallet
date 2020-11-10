@@ -13,11 +13,11 @@ import rootSaga from '../sagas';
 
 // Reducers
 import { userReducer } from './user';
-import { credentialsReducer } from './credentials';
+import { certificatesReducer } from './certificates';
 
 export const rootReducer = combineReducers({
   user: userReducer,
-  credentials: credentialsReducer,
+  certificates: certificatesReducer,
 });
 
 const persistConfig: PersistConfig<ReturnType<typeof rootReducer>> = {

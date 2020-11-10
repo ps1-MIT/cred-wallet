@@ -9,7 +9,7 @@ export type VerifyPanelStatus =
   | 'biometric-verify'
   | 'verified';
 
-export interface ICredential {}
+export interface ICertificate {}
 
 export interface ICertificateDeeplink {
   challenge: any;
