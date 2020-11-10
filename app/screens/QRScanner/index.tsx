@@ -11,13 +11,12 @@ export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
   // route,
 }) => {
   const onSuccess = useCallback((e) => {
-    const addCertificateDeeplink = parseCertificateDeeplink(e.data);
-    console.tron.log(
-      'parsedUrl',
-      addCertificateDeeplink.challenge,
-      addCertificateDeeplink.requestUrl,
-    );
+    const certificateDeeplink = parseCertificateDeeplink(e.data);
     navigation.goBack();
+    setTimeout(
+      () => navigation.navigate('AddCertificate', { certificateDeeplink }),
+      200,
+    );
   }, []);
 
   const goBack = useCallback(() => navigation.goBack(), [navigation]);

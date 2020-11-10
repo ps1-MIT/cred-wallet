@@ -2,17 +2,19 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
-import { PinScreen, QRScannerScreen } from '../screens';
+import { PinScreen, QRScannerScreen, AddCertificateScreen } from '../screens';
 import { MainTabNavigator } from './main-tab-navigator';
 import {
   TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS,
   WITHOUT_HEADER_OPTIONS,
 } from './options';
 import { navigationRef } from '../services/navigator';
+import { ICertificateDeeplink } from '../utils/types';
 
 export type RootParams = {
   Pin: { isPushed: boolean };
   QRScanner: undefined;
+  AddCertificate: { certificateDeeplink: ICertificateDeeplink };
   MainTabs: undefined;
 };
 
@@ -29,6 +31,11 @@ const RootNavigator = () => (
       <Stack.Screen
         name="QRScanner"
         component={QRScannerScreen}
+        options={TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS}
+      />
+      <Stack.Screen
+        name="AddCertificate"
+        component={AddCertificateScreen}
         options={TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS}
       />
       <Stack.Screen name="MainTabs" component={MainTabNavigator} />
