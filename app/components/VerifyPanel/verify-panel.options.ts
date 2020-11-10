@@ -18,6 +18,7 @@ type VerifyPanelStatusKeys =
   | 'CHECK_BIOMETRIC_VERIFY'
   | 'CHECK_PIN_KEYCHAIN'
   | 'PIN_CREATE'
+  | 'PIN_CREATE_VERIFY'
   | 'SAVE_PIN_KEYCHAIN'
   | 'PIN_ENTER'
   | 'PIN_VERIFY'
@@ -27,6 +28,7 @@ export const PANEL_STATUS: Record<VerifyPanelStatusKeys, VerifyPanelStatus> = {
   CHECK_BIOMETRIC_VERIFY: 'check-biometric-verify',
   CHECK_PIN_KEYCHAIN: 'check-pin-keychain',
   PIN_CREATE: 'pin-create',
+  PIN_CREATE_VERIFY: 'pin-create-verify',
   SAVE_PIN_KEYCHAIN: 'save-pin-keychain',
   PIN_ENTER: 'pin-enter',
   PIN_VERIFY: 'pin-verify',

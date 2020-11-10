@@ -113,6 +113,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
   );
   const [keychainPin, setKeychainPin] = useState<string | null>(null);
   const [enteredPin, setEnteredPin] = useState<string>('');
+  const [createVerifyPin, setCreateVerifyPin] = useState<string>('');
   const [isEnterPinAvailable, setIsEnterPinAvailable] = useState<boolean>(
     false,
   );
@@ -161,7 +162,7 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
       console.tron.log('Pin saved to keystore!');
       setKeychainPin(enteredPin);
       setEnteredPin('');
-      setPanelStatus(PANEL_STATUS.CHECK_BIOMETRIC_VERIFY);
+      setPanelStatus(PANEL_STATUS.VERIFIED);
     });
   }, [enteredPin, setPanelStatus, setKeychainPin]);
 
@@ -201,8 +202,17 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
     if (enteredPin.length === PIN_LENGTH) {
       switch (panelStatus) {
         case PANEL_STATUS.PIN_CREATE:
+          setCreateVerifyPin(enteredPin);
           setIsEnterPinAvailable(false);
-          setPanelStatus(PANEL_STATUS.SAVE_PIN_KEYCHAIN);
+          setPanelStatus(PANEL_STATUS.PIN_CREATE_VERIFY);
+          break;
+        case PANEL_STATUS.PIN_CREATE_VERIFY:
+          if (enteredPin === createVerifyPin) {
+            setPanelStatus(PANEL_STATUS.SAVE_PIN_KEYCHAIN);
+            setIsEnterPinAvailable(false);
+          } else {
+            setEnteredPin('');
+          }
           break;
         case PANEL_STATUS.PIN_ENTER:
           setPanelStatus(PANEL_STATUS.PIN_VERIFY);
@@ -218,6 +228,10 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
         checkPinKeychain();
         break;
       case PANEL_STATUS.PIN_CREATE:
+        activatePinInput();
+        break;
+      case PANEL_STATUS.PIN_CREATE_VERIFY:
+        setEnteredPin('');
         activatePinInput();
         break;
       case PANEL_STATUS.SAVE_PIN_KEYCHAIN:
@@ -264,6 +278,8 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
         return 'Loading..';
       case PANEL_STATUS.PIN_CREATE:
         return 'Create PIN';
+      case PANEL_STATUS.PIN_CREATE_VERIFY:
+        return 'Verify PIN';
       case PANEL_STATUS.PIN_ENTER:
       case PANEL_STATUS.PIN_VERIFY:
         return 'Enter PIN';
@@ -288,7 +304,10 @@ export const VerifyPanel: React.FunctionComponent<VerifyPanelProps> = ({
         renderItem={({ item: ciphers }) => (
           <CipherRow
             biometricType={
-              panelStatus === PANEL_STATUS.PIN_ENTER ? biometricType : null
+              panelStatus === PANEL_STATUS.PIN_ENTER ||
+              panelStatus === PANEL_STATUS.BIOMETRIC_VERIFY
+                ? biometricType
+                : null
             }
             ciphers={ciphers}
             onCipherPress={onCipherPress}
