@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useCallback, useEffect } from 'react';
-import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
+import React, { FunctionComponent, useCallback } from 'react';
+import { SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import { QRScannerScreenProps } from './qr-scanner.props';
@@ -14,20 +14,45 @@ export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
     navigation.goBack();
   }, []);
 
+  const goBack = useCallback(() => navigation.goBack(), [navigation]);
+
   return (
     <SafeAreaView style={styles.root}>
       <QRCodeScanner
         onRead={onSuccess}
-        // flashMode={RNCamera.Constants.FlashMode.torch}
-        // topContent={
-        //   <Text>
-        //     Go to <Text>wikipedia.org/wiki/QR_code</Text> on your computer and
-        //     scan the QR code.
-        //   </Text>
-        // }
+        // vibrate?: boolean;
+        // reactivate?: boolean;
+        // reactivateTimeout?: number;
+        fadeIn
+        showMarker
+        // cameraType?: 'front' | 'back';
+        // customMarker?: JSX.Element;
+        // containerStyle?: StyleProp<ViewStyle>;
+        cameraStyle={styles.cameraContainer}
+        markerStyle={styles.cameraMarkerContiner}
+        // topViewStyle?: StyleProp<ViewStyle>;
+        // bottomViewStyle?: StyleProp<ViewStyle>;
+        // topContent?: JSX.Element | string;
+        // bottomContent?: JSX.Element | string;
+        // notAuthorizedView?: JSX.Element;
+        // permissionDialogTitle?: string;
+        // permissionDialogMessage?: string;
+        // buttonPositive?: string;
+        // checkAndroid6Permissions?: boolean;
+
+        // cameraProps?: RNCameraProps;
+        // inside // flashMode={RNCamera.Constants.FlashMode.torch}
+        topContent={
+          <TouchableOpacity
+            onPress={goBack}
+            style={styles.goBackZoneContainer}
+          />
+        }
         bottomContent={
-          <TouchableOpacity>
-            <Text>OK. Got it!</Text>
+          <TouchableOpacity onPress={goBack} style={styles.goBackZoneContainer}>
+            <Text style={styles.descriptionText}>
+              place the camera on the QR code
+            </Text>
           </TouchableOpacity>
         }
       />
