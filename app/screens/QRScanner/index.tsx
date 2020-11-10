@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useCallback, useEffect } from 'react';
 import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
-// import { RNCamera } from 'react-native-camera';
 
 import { QRScannerScreenProps } from './qr-scanner.props';
 import { styles } from './qr-scanner.styles';
@@ -12,6 +11,7 @@ export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
 }) => {
   const onSuccess = useCallback((e) => {
     console.tron.log(e.data);
+    navigation.goBack();
   }, []);
 
   return (
@@ -19,12 +19,12 @@ export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
       <QRCodeScanner
         onRead={onSuccess}
         // flashMode={RNCamera.Constants.FlashMode.torch}
-        topContent={
-          <Text>
-            Go to <Text>wikipedia.org/wiki/QR_code</Text> on your computer and
-            scan the QR code.
-          </Text>
-        }
+        // topContent={
+        //   <Text>
+        //     Go to <Text>wikipedia.org/wiki/QR_code</Text> on your computer and
+        //     scan the QR code.
+        //   </Text>
+        // }
         bottomContent={
           <TouchableOpacity>
             <Text>OK. Got it!</Text>

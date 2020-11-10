@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
-import { PinScreen } from '../screens';
+import { PinScreen, QRScannerScreen } from '../screens';
 import { MainTabNavigator } from './main-tab-navigator';
 import {
   TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS,
@@ -12,6 +12,7 @@ import { navigationRef } from '../services/navigator';
 
 export type RootParams = {
   Pin: { isPushed: boolean };
+  QRScanner: undefined;
   MainTabs: undefined;
 };
 
@@ -23,6 +24,11 @@ const RootNavigator = () => (
       <Stack.Screen
         name="Pin"
         component={PinScreen}
+        options={TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS}
+      />
+      <Stack.Screen
+        name="QRScanner"
+        component={QRScannerScreen}
         options={TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS}
       />
       <Stack.Screen name="MainTabs" component={MainTabNavigator} />
