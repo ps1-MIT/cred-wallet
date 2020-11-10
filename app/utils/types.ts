@@ -10,3 +10,8 @@ export type VerifyPanelStatus =
   | 'verified';
 
 export interface ICredential {}
+
+export interface ICertificateDeeplink {
+  challenge: any;
+  requestUrl: any;
+}

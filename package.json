@@ -19,6 +19,7 @@
     "apisauce": "^1.1.2",
     "i18next": "^19.8.2",
     "lodash": "^4.17.20",
+    "query-string": "^6.13.7",
     "random-string": "^0.2.0",
     "react": "16.13.1",
     "react-i18next": "^11.7.3",

@@ -4,13 +4,19 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import { QRScannerScreenProps } from './qr-scanner.props';
 import { styles } from './qr-scanner.styles';
+import { parseCertificateDeeplink } from '../../utils';
 
 export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
   navigation,
   // route,
 }) => {
   const onSuccess = useCallback((e) => {
-    console.tron.log(e.data);
+    const addCertificateDeeplink = parseCertificateDeeplink(e.data);
+    console.tron.log(
+      'parsedUrl',
+      addCertificateDeeplink.challenge,
+      addCertificateDeeplink.requestUrl,
+    );
     navigation.goBack();
   }, []);
 
