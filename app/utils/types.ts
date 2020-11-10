@@ -15,3 +15,11 @@ export interface ICertificateDeeplink {
   challenge: any;
   requestUrl: any;
 }
+
+export interface ISubjectDID {
+  did: string;
+}
+
+export interface ICertificateDeeplinkWithDID
+  extends ICertificateDeeplink,
+    ISubjectDID {}
