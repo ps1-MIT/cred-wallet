@@ -1,11 +1,11 @@
 import apisauce, { ApisauceInstance } from 'apisauce';
-import config from '../../config/env';
+import CONFIG from '../../config/env';
 import { Credential, User } from './api.types';
 
 class Api {
   private client: ApisauceInstance;
 
-  constructor(baseURL = config.API_URL) {
+  constructor(baseURL = CONFIG.API_URL) {
     this.client = apisauce.create({
       baseURL,
       timeout: 10000,
