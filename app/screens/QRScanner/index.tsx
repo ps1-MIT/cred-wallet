@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useCallback } from 'react';
-import { SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import { QRScannerScreenProps } from './qr-scanner.props';
