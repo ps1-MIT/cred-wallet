@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { SafeAreaView, View, TouchableOpacity, FlatList } from 'react-native';
+import SearchBar from 'react-native-search-bar';
 
 import { useUserAccount } from '../../redux/user';
 import { Text } from '../../components';
@@ -15,6 +16,14 @@ export const HomeScreen: FunctionComponent<HomeScreenProps> = ({
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.body}>
+        <SearchBar
+          onChangeText={() => {}}
+          onFocus={() => {}}
+          onSearchButtonPress={() => {}}
+          onCancelButtonPress={() => {}}
+          // searchBarStyle
+          // style
+        />
         <TouchableOpacity onPress={() => navigation.navigate('QRScanner')}>
           <Text preset="default">Navigate to QRScanner</Text>
         </TouchableOpacity>
