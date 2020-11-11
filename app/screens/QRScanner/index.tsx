@@ -5,6 +5,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import { QRScannerScreenProps } from './qr-scanner.props';
 import { styles } from './qr-scanner.styles';
 import { parseCertificateDeeplink } from '../../utils';
+import { NAVIGATION_TIME } from '../../utils/constants';
 
 export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
   navigation,
@@ -15,7 +16,7 @@ export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
     navigation.goBack();
     setTimeout(
       () => navigation.navigate('AddCertificate', { certificateDeeplink }),
-      200,
+      NAVIGATION_TIME,
     );
   }, []);
 
