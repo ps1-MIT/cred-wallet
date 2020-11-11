@@ -3,7 +3,7 @@ import { COLORS } from '../../utils/colors';
 
 interface HomeScreenStyles {
   root: ViewStyle;
-  body: ViewStyle;
+  flexContainer: ViewStyle;
   description: TextStyle;
   listContainer: ViewStyle;
   stubContainer: ViewStyle;
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create<HomeScreenStyles>({
     flex: 1,
     backgroundColor: COLORS.WHITE,
   },
-  body: {
+  flexContainer: {
     flex: 1,
   },
   description: {
