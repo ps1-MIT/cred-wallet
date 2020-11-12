@@ -5,31 +5,28 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import { QRScannerScreenProps } from './qr-scanner.props';
 import { styles } from './qr-scanner.styles';
 import { generateExampleDid, parseCertificateDeeplink } from '../../utils';
-import { NAVIGATION_TIME } from '../../utils/constants';
 import { useDispatch } from 'react-redux';
 import { useAddCertificateCallback } from '../../redux/certificates';
 
 export const QRScannerScreen: FunctionComponent<QRScannerScreenProps> = ({
   navigation,
-  // route,
 }) => {
   const dispatch = useDispatch();
   const addCertificate = useAddCertificateCallback(dispatch);
 
-  const onSuccess = useCallback((e) => {
-    const certificateDeeplink = parseCertificateDeeplink(e.data);
-    addCertificate({
-      did: generateExampleDid(),
-      ...certificateDeeplink,
-    });
-    // navigation.goBack();
-    // setTimeout(
-    //   () => navigation.navigate('AddCertificate', { certificateDeeplink }),
-    //   NAVIGATION_TIME,
-    // );
-  }, []);
-
   const goBack = useCallback(() => navigation.goBack(), [navigation]);
+
+  const onSuccess = useCallback(
+    (result) => {
+      const certificateDeeplink = parseCertificateDeeplink(result.data);
+      addCertificate({
+        did: generateExampleDid(),
+        ...certificateDeeplink,
+      });
+      goBack();
+    },
+    [addCertificate, parseCertificateDeeplink, generateExampleDid, goBack],
+  );
 
   return (
     <SafeAreaView style={styles.root}>

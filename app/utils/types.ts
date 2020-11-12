@@ -9,7 +9,34 @@ export type VerifyPanelStatus =
   | 'biometric-verify'
   | 'verified';
 
-export interface ICertificate {}
+export interface ICertificate {
+  '@context': string[];
+  type: string[];
+  id: string;
+  issuerId: string;
+  issuanceDate: string;
+  credentialSubject: {
+    id: string;
+    type: string;
+    name: string;
+    hasAchieved: {
+      type: string[];
+      id: string;
+      name: string;
+      description: string;
+    };
+  };
+  proofType: string;
+  proof: { [proofUrl: string]: Object | string };
+}
+
+export interface IIssuer {
+  type: 'issuer';
+  id: string;
+  image: string;
+  name: string;
+  url: string;
+}
 
 export interface ICertificateDeeplink {
   challenge: any;

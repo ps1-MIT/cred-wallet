@@ -1,5 +1,5 @@
 import { createReducer } from 'reduxsauce';
-import { ICertificate } from '../../utils/types';
+import { ICertificate, IIssuer } from '../../utils/types';
 import {
   CertificatesAction,
   certificatesActionTypes,
@@ -9,13 +9,18 @@ import {
 } from './actions';
 
 export interface CertificatesState {
-  data: ICertificate[];
+  data: {
+    [issuerId: string]: {
+      issuer: IIssuer;
+      certificates: ICertificate[];
+    };
+  };
   isLoading: boolean;
   error: string | null;
 }
 
 const INITIAL_STATE: CertificatesState = {
-  data: [],
+  data: {},
   error: null,
   isLoading: false,
 };
@@ -29,15 +34,19 @@ const addCertificate: Handler<AddCertificateAction> = (state) => ({
 
 const addCertificateSuccess: Handler<AddCertificateSuccessAction> = (
   state,
-  { credential },
+  { certificate },
 ) => {
-  // TODO: parse credential
-  // TODO: create parsed ICertificate instance
+  console.tron.log('addCertificateSuccess', certificate);
+
+  // TODO: find current issuer
+  // TODO: add certificate to found issuer
 
   return {
     ...state,
     isLoading: false,
-    data: [...state.data],
+    data: {
+      ...state.data,
+    },
   };
 };
 

@@ -1,6 +1,5 @@
 import { createActions } from 'reduxsauce';
-import { Credential } from '../../services/api/api.types';
-import { ICertificateDeeplinkWithDID } from '../../utils/types';
+import { ICertificate, ICertificateDeeplinkWithDID } from '../../utils/types';
 
 interface CertificatesActionTypes {
   ADD_CERTIFICATE: 'ADD_CERTIFICATE';
@@ -15,7 +14,7 @@ export interface AddCertificateAction {
 
 export interface AddCertificateSuccessAction {
   type: CertificatesActionTypes['ADD_CERTIFICATE_SUCCESS'];
-  credential: Credential;
+  certificate: ICertificate;
 }
 
 export interface AddCertificateFailureAction {
@@ -25,7 +24,7 @@ export interface AddCertificateFailureAction {
 
 interface CertificatesActionCreators {
   addCertificate(): AddCertificateAction;
-  addCertificateSuccess(credential: Credential): AddCertificateSuccessAction;
+  addCertificateSuccess(certificate: ICertificate): AddCertificateSuccessAction;
   addCertificateFailure(error: string): AddCertificateFailureAction;
 }
 

@@ -9,12 +9,12 @@ import {
   WITHOUT_HEADER_OPTIONS,
 } from './options';
 import { navigationRef } from '../services/navigator';
-import { ICertificateDeeplink } from '../utils/types';
+import { ICertificate, IIssuer } from '../utils/types';
 
 export type RootParams = {
   Pin: { isPushed: boolean };
   QRScanner: undefined;
-  AddCertificate: { certificateDeeplink: ICertificateDeeplink };
+  AddCertificate: { certificate: ICertificate; issuer: IIssuer };
   MainTabs: undefined;
 };
 

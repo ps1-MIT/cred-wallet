@@ -1,6 +1,7 @@
 import queryString from 'query-string';
 import randomString from 'random-string';
-import { ICertificateDeeplink } from './types';
+import { Credential } from '../services/api/api.types';
+import { ICertificate, ICertificateDeeplink, IIssuer } from './types';
 
 //TODO: remove sum function
 // created for jest first test only
@@ -27,4 +28,25 @@ export function generateExampleDid() {
 export function generateDid() {
   const DID_PREFIX = 'did:';
   return `${DID_PREFIX}${randomString()}`;
+}
+
+export function getCredentialCertificate(credential: Credential): ICertificate {
+  const proof = {};
+
+  // TODO: proof parsing
+
+  return {
+    ['@context']: credential['@context'],
+    type: credential.type,
+    id: credential.id,
+    issuerId: credential.issuer.id,
+    issuanceDate: credential.issuanceDate,
+    credentialSubject: credential.credentialSubject,
+    proof,
+    proofType: credential.proof.type as string,
+  };
+}
+
+export function getCredentialIssuer(credential: Credential): IIssuer {
+  return credential.issuer;
 }

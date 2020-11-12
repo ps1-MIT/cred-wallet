@@ -9,7 +9,7 @@ export interface Credential {
   '@context': string[];
   type: string[];
   issuer: {
-    type: string;
+    type: 'issuer';
     id: string;
     image: string;
     name: string;
