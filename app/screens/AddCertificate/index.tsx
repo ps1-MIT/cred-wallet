@@ -1,6 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+import { useDispatch } from 'react-redux';
 
+import { useAddCertificateSuccessCallback } from '../../redux/certificates';
 import { AddCertificateScreenProps } from './add-certificate.props';
 import { styles } from './add-certificate.styles';
 
@@ -8,12 +10,16 @@ export const AddCertificateScreen: React.FunctionComponent<AddCertificateScreenP
   navigation,
   route,
 }) => {
+  const dispatch = useDispatch();
+  const saveCertificate = useAddCertificateSuccessCallback(dispatch);
+
   const certificate = useMemo(() => route.params.certificate, [route.params]);
   const issuer = useMemo(() => route.params.issuer, [route.params]);
 
-  console.tron.log('AddCertificate screen params: ', certificate, issuer);
-
-  const onYesPress = useCallback(() => {}, []);
+  const onYesPress = useCallback(() => {
+    saveCertificate(certificate, issuer);
+    navigation.goBack();
+  }, [saveCertificate, certificate, issuer, navigation]);
 
   const onNoPress = useCallback(() => {
     navigation.goBack();
@@ -22,11 +28,12 @@ export const AddCertificateScreen: React.FunctionComponent<AddCertificateScreenP
   // TODO: UI
   return (
     <View style={styles.container}>
+      <Text style={styles.label}>Would you like to add this certificate?</Text>
       <TouchableOpacity onPress={onYesPress}>
-        <Text>CONFIRM</Text>
+        <Text style={styles.label}>CONFIRM</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={onNoPress}>
-        <Text>CANCEL</Text>
+        <Text style={styles.label}>CANCEL</Text>
       </TouchableOpacity>
     </View>
   );

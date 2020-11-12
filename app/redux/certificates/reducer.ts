@@ -1,4 +1,6 @@
 import { createReducer } from 'reduxsauce';
+import _ from 'lodash';
+
 import { ICertificate, IIssuer } from '../../utils/types';
 import {
   CertificatesAction,
@@ -34,18 +36,27 @@ const addCertificate: Handler<AddCertificateAction> = (state) => ({
 
 const addCertificateSuccess: Handler<AddCertificateSuccessAction> = (
   state,
-  { certificate },
+  { certificate, issuer },
 ) => {
-  console.tron.log('addCertificateSuccess', certificate);
-
-  // TODO: find current issuer
-  // TODO: add certificate to found issuer
+  const newIssuerCertificates = state.data[issuer.id]?.certificates || [];
+  const isNewCertificate = !_.find(
+    newIssuerCertificates,
+    (el) => el.id === certificate.id,
+  );
+  if (isNewCertificate) {
+    newIssuerCertificates.push(certificate);
+  }
 
   return {
     ...state,
     isLoading: false,
+    error: null,
     data: {
       ...state.data,
+      [issuer.id]: {
+        issuer,
+        certificates: newIssuerCertificates,
+      },
     },
   };
 };
