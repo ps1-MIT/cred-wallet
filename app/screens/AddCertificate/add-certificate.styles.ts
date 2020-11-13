@@ -99,11 +99,14 @@ export const styles = StyleSheet.create<AddCertificateScreenStyles>({
   certificateInfoSignIcon: {
     width: 32,
     height: 32,
+    position: 'absolute',
+    right: 0,
   },
   certificateInfoUsernameRow: {
     marginTop: 16,
     width: '100%',
     flexDirection: 'row',
+    alignItems: 'center',
   },
   certificateInfoUsername: {
     // TODO: fontFamily

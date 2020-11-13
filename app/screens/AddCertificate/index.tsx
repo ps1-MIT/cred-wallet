@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 import { useDispatch } from 'react-redux';
+import { IMAGES } from '../../assets';
 
 import { useAddCertificateSuccessCallback } from '../../redux/certificates';
 import { AddCertificateScreenProps } from './add-certificate.props';
@@ -36,10 +37,7 @@ export const AddCertificateScreen: React.FunctionComponent<AddCertificateScreenP
 
           <View style={styles.certificateInfoPhotoArea}>
             <View style={styles.certificateInfoPhotoContainer}>
-              {/* <Image
-                style={styles.certificateInfoPhoto}
-                source={null}
-              /> */}
+              <Image style={styles.certificateInfoPhoto} source={IMAGES.MAN} />
             </View>
 
             <View style={styles.certificateInfoFieldsContainer}>
@@ -73,7 +71,10 @@ export const AddCertificateScreen: React.FunctionComponent<AddCertificateScreenP
               {certificate.credentialSubject?.name}
             </Text>
 
-            {/* <Image style={styles.certificateInfoSignIcon} source={null} /> */}
+            <Image
+              style={styles.certificateInfoSignIcon}
+              source={IMAGES.SIGNATURE}
+            />
           </View>
         </View>
         <View style={styles.buttonsContainer}>
