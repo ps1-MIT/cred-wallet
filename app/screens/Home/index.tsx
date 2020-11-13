@@ -6,6 +6,7 @@ import {
   FlatList,
   Animated,
   Easing,
+  Image,
 } from 'react-native';
 import SearchBar from 'react-native-search-bar';
 import _ from 'lodash';
@@ -14,6 +15,8 @@ import { Text } from '../../components';
 import { HomeScreenProps } from './home.props';
 import { styles } from './home.styles';
 import { STUB_BACKGROUNDS } from './home.dummy';
+import { useIssuerCertificates } from '../../redux/certificates';
+import { IMAGES } from '../../assets';
 
 const ANIMATION_DURATION = 250;
 
@@ -22,6 +25,7 @@ export const HomeScreen: React.FunctionComponent<HomeScreenProps> = ({
 }) => {
   /* ------ State ------ */
 
+  const issuers = useIssuerCertificates();
   const extendedListOpacity = useRef(new Animated.Value(1));
 
   const [isExtendedList, setIsExtendedList] = useState<boolean>(true);
@@ -57,9 +61,15 @@ export const HomeScreen: React.FunctionComponent<HomeScreenProps> = ({
         style={[styles.flexContainer, { opacity: extendedListOpacity.current }]}
       >
         <FlatList
-          data={STUB_BACKGROUNDS}
-          renderItem={({ item: backgroundColor }) => (
-            <View style={[styles.stubContainer, { backgroundColor }]} />
+          data={Object.values(issuers)}
+          renderItem={({ item }) => (
+            <View style={styles.issuerContainer}>
+              <Image style={styles.issuerImage} source={IMAGES.GRADUATION} />
+              <Text style={styles.issuerTitle}>{item.issuer.name}</Text>
+              <Text style={styles.issuerCertificates}>
+                {item.certificates.length} certificates
+              </Text>
+            </View>
           )}
           numColumns={2}
           keyExtractor={(item, index) => `stub-container-${item}-${index}`}
@@ -96,10 +106,13 @@ export const HomeScreen: React.FunctionComponent<HomeScreenProps> = ({
           // searchBarStyle
           // style
         />
-        <TouchableOpacity onPress={() => navigation.navigate('QRScanner')}>
-          <Text preset="default">Navigate to QRScanner</Text>
-        </TouchableOpacity>
         {renderCurrentList()}
+        <TouchableOpacity
+          style={styles.addCertificateButtonContainer}
+          onPress={() => navigation.navigate('QRScanner')}
+        >
+          <Text style={styles.addCertificateButtonText}>+</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
