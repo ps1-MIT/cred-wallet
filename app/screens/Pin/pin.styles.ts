@@ -4,6 +4,7 @@ import { COLORS } from '../../utils/colors';
 interface PinScreenStyles {
   container: ViewStyle;
   safeAreaContainer: ViewStyle;
+  backgroundWhite: ViewStyle;
 }
 
 export const styles = StyleSheet.create<PinScreenStyles>({
@@ -15,5 +16,8 @@ export const styles = StyleSheet.create<PinScreenStyles>({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  backgroundWhite: {
+    backgroundColor: COLORS.WHITE,
   },
 });
