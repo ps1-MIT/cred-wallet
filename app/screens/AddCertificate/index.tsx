@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { IMAGES } from '../../assets';
+import moment from 'moment';
 
+import { IMAGES } from '../../assets';
 import { useAddCertificateSuccessCallback } from '../../redux/certificates';
 import { AddCertificateScreenProps } from './add-certificate.props';
 import { styles } from './add-certificate.styles';
@@ -42,24 +43,16 @@ export const AddCertificateScreen: React.FunctionComponent<AddCertificateScreenP
 
             <View style={styles.certificateInfoFieldsContainer}>
               <View style={styles.certificateInfoFieldContainer}>
-                <Text style={styles.certificateInfoFieldName}>Course:</Text>
-                <Text style={styles.certificateInfoFieldValue}>software</Text>
-              </View>
-              <View style={styles.certificateInfoFieldContainer}>
-                <Text style={styles.certificateInfoFieldName}>Level:</Text>
+                <Text style={styles.certificateInfoFieldName}>ID:</Text>
                 <Text style={styles.certificateInfoFieldValue}>
-                  super high level
+                  {certificate.id}
                 </Text>
               </View>
               <View style={styles.certificateInfoFieldContainer}>
                 <Text style={styles.certificateInfoFieldName}>Date:</Text>
                 <Text style={styles.certificateInfoFieldValue}>
-                  02/01/20 - 02/04/20
+                  {moment(certificate.issuanceDate).format('DD/MM/YYYY')}
                 </Text>
-              </View>
-              <View style={styles.certificateInfoFieldContainer}>
-                <Text style={styles.certificateInfoFieldName}>Number:</Text>
-                <Text style={styles.certificateInfoFieldValue}>345346</Text>
               </View>
             </View>
           </View>
