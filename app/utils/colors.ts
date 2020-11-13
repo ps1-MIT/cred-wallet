@@ -8,4 +8,6 @@ export const COLORS = {
   BLACK: '#333',
   BORDER: '#e2e2e2',
   WHITE_HALF_OPACITY: '#FFFFFF88',
+  MISCHKA: '#DBDDE8',
+  BAY_OF_MANY: '#29398E',
 };
