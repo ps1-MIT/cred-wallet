@@ -1,10 +1,11 @@
-import React, { FunctionComponent, useCallback } from 'react';
+import React, { FunctionComponent, useCallback, useMemo } from 'react';
 import { SafeAreaView } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 
 import { VerifyPanel } from '../../components';
 import { PinScreenProps } from './pin.props';
 import { styles } from './pin.styles';
+import { isAndroid, isIOS } from '../../utils';
 
 export const PinScreen: FunctionComponent<PinScreenProps> = ({
   navigation,
@@ -19,19 +20,26 @@ export const PinScreen: FunctionComponent<PinScreenProps> = ({
     }
   }, [navigation, route.params]);
 
-  return (
-    <BlurView
-      style={[
-        styles.container,
-        // Android SplashScreen fix
-        !route.params?.isPushed ? styles.backgroundWhite : null,
-      ]}
-      blurAmount={10}
-      blurType="light"
-    >
-      <SafeAreaView style={styles.safeAreaContainer}>
+  const mainPageContent = useMemo(
+    () => (
+      <SafeAreaView
+        style={[
+          styles.safeAreaContainer,
+          isAndroid ? styles.backgroundWhite : null,
+        ]}
+      >
         <VerifyPanel onVerifySuccess={onVerifySuccess} />
       </SafeAreaView>
+    ),
+    [isAndroid, onVerifySuccess],
+  );
+
+  // Render BlurView only for iOS
+  return isIOS ? (
+    <BlurView style={styles.container} blurAmount={10} blurType="light">
+      {mainPageContent}
     </BlurView>
+  ) : (
+    mainPageContent
   );
 };
