@@ -14,7 +14,7 @@ import { getCredentialCertificate, getCredentialIssuer } from '../utils';
 export function* addCertificate({ data }: AddCertificateAction) {
   const response: ApiResponse<Credential, Credential> = yield call(
     apiInstance.addCertificate,
-    `${data.requestUrl.replace(CONFIG.API_URL, '')}/nodidproof`,
+    `${data.requestUrl.replace(CONFIG.API_URL, '')}`,
     {
       holder: data.did,
       ...data,
