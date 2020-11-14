@@ -78,7 +78,7 @@ export const HomeScreen: React.FunctionComponent<HomeScreenProps> = ({
         />
       </Animated.View>
     );
-  }, [STUB_BACKGROUNDS, extendedListOpacity.current]);
+  }, [issuers, extendedListOpacity.current]);
 
   // TODO: move this callback to components
   const renderShortList = useCallback(() => {
