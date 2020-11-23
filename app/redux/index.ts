@@ -7,7 +7,12 @@ import {
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import AsyncStorage from '@react-native-community/async-storage';
-import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
+import {
+  purgeStoredState,
+  persistStore,
+  persistReducer,
+  PersistConfig,
+} from 'redux-persist';
 import reactotron from '../services/reactotron';
 import rootSaga from '../sagas';
 
@@ -40,11 +45,13 @@ if (reactotron) {
   enhancers.push(reactotron?.createEnhancer!());
 }
 
+purgeStoredState(persistConfig);
+
 export const store = createStore(persistedReducer, compose(...enhancers));
 
 sagaMiddleware.run(rootSaga);
 
-persistStore(store);
+// persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 
