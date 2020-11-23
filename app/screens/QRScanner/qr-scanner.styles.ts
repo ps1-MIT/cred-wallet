@@ -29,6 +29,7 @@ export const styles = StyleSheet.create<QRScannerScreenStyles>({
     borderColor: 'white',
   },
   descriptionText: {
+    marginTop: 32,
     fontSize: 14,
     lineHeight: 17.5,
     fontWeight: '500',
