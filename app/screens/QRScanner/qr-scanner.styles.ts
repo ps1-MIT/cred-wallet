@@ -17,8 +17,6 @@ export const styles = StyleSheet.create<QRScannerScreenStyles>({
     justifyContent: 'center',
   },
   cameraContainer: {
-    width: '85%',
-    height: '85%',
     borderColor: COLORS.BLACK,
     borderWidth: 6,
     alignSelf: 'center',
