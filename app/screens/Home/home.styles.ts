@@ -40,7 +40,7 @@ export const styles = StyleSheet.create<HomeScreenStyles>({
     height: 75,
     borderRadius: 37.5,
     right: 16,
-    bottom: 16,
+    bottom: 18,
   },
   // TODO: replace plus by Icon
   addCertificateButtonText: {

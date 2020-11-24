@@ -8,12 +8,12 @@ import {
   Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 import _ from 'lodash';
 
 import { SearchBar, Text } from '../../components';
 import { HomeScreenProps } from './home.props';
 import { styles } from './home.styles';
-import { STUB_BACKGROUNDS } from './home.dummy';
 import { useIssuerCertificates } from '../../redux/certificates';
 import { IMAGES } from '../../assets';
 
@@ -27,6 +27,7 @@ export const HomeScreen: React.FunctionComponent<HomeScreenProps> = ({
   const issuers = useIssuerCertificates();
   const extendedListOpacity = useRef(new Animated.Value(1));
 
+  const [searchValue, setSearchValue] = useState<string>('');
   const [isExtendedList, setIsExtendedList] = useState<boolean>(true);
 
   /* ------ Callbacks ------ */
@@ -94,16 +95,13 @@ export const HomeScreen: React.FunctionComponent<HomeScreenProps> = ({
   );
 
   return (
-    <SafeAreaView style={styles.root}>
+    <SafeAreaView style={styles.root} edges={['top']}>
       <View style={styles.flexContainer}>
         <SearchBar
-          onChangeText={() => {}}
+          value={searchValue}
+          onChangeText={setSearchValue}
           onFocus={onSearchFocus}
           onBlur={onSearchBlur}
-          onSearchButtonPress={() => {}}
-          onCancelButtonPress={() => {}}
-          // searchBarStyle
-          // style
         />
         {renderCurrentList()}
         <TouchableOpacity
