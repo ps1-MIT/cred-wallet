@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
 import {
-  SafeAreaView,
   View,
   TouchableOpacity,
   FlatList,
@@ -8,6 +7,7 @@ import {
   Easing,
   Image,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import _ from 'lodash';
 
 import { SearchBar, Text } from '../../components';

@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useCallback } from 'react';
-import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import { useDispatch } from 'react-redux';
 

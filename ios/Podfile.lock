@@ -248,8 +248,8 @@ PODS:
     - React-Core
   - react-native-camera/RN (3.40.0):
     - React-Core
-  - react-native-safe-area-context (3.1.7):
-    - React
+  - react-native-safe-area-context (3.1.9):
+    - React-Core
   - react-native-sensitive-info (6.0.0-alpha.8):
     - React
   - React-RCTActionSheet (0.63.2):
@@ -324,8 +324,6 @@ PODS:
     - React
   - RNScreens (2.10.1):
     - React
-  - RNSearchBar (3.5.1):
-    - React
   - RNVectorIcons (7.1.0):
     - React
   - TouchID (4.4.1):
@@ -392,7 +390,6 @@ DEPENDENCIES:
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
-  - RNSearchBar (from `../node_modules/react-native-search-bar`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - TouchID (from `../node_modules/react-native-touch-id`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -485,8 +482,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-  RNSearchBar:
-    :path: "../node_modules/react-native-search-bar"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   TouchID:
@@ -524,7 +519,7 @@ SPEC CHECKSUMS:
   React-jsinspector: b14e62ebe7a66e9231e9581279909f2fc3db6606
   react-native-blur: cad4d93b364f91e7b7931b3fa935455487e5c33c
   react-native-camera: 35854c4f764a4a6cf61c1c3525888b92f0fe4b31
-  react-native-safe-area-context: 955ecfce672683b495d9294d2f154a9ad1d9796b
+  react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
   react-native-sensitive-info: 7682ade5fe71c87a5e93a35d9e9c8a3c8a038a7d
   React-RCTActionSheet: 910163b6b09685a35c4ebbc52b66d1bfbbe39fc5
   React-RCTAnimation: 9a883bbe1e9d2e158d4fb53765ed64c8dc2200c6
@@ -542,7 +537,6 @@ SPEC CHECKSUMS:
   RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
-  RNSearchBar: 9860431356b7d12a8449d2fddb2b5f3c78d1e99f
   RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598

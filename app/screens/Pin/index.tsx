@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useCallback, useMemo } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { BlurView } from '@react-native-community/blur';
 
 import { VerifyPanel } from '../../components';
