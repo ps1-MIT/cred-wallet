@@ -12,6 +12,8 @@ export const DefaultTextInput: React.ForwardRefExoticComponent<DefaultTextInputP
         ref={ref}
         selectionColor={COLORS.BLACK}
         placeholderTextColor={COLORS.SILVER}
+        autoCorrect={false}
+        autoCapitalize="none"
         {...rest}
         style={[styles.input, propStyle]}
       />
