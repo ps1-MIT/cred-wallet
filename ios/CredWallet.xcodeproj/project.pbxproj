@@ -275,7 +275,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = ACS2X6ERDY;
+						DevelopmentTeam = A35W4MM59Y;
 						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
@@ -661,7 +661,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ACS2X6ERDY;
+				DEVELOPMENT_TEAM = A35W4MM59Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CredWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -670,7 +670,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goHeja.goHejaDev;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.wallet;
 				PRODUCT_NAME = CredWallet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -688,7 +688,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ACS2X6ERDY;
+				DEVELOPMENT_TEAM = A35W4MM59Y;
 				INFOPLIST_FILE = CredWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -696,7 +696,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goHeja.goHejaDev;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.wallet;
 				PRODUCT_NAME = CredWallet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

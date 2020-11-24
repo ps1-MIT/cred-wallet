@@ -45,13 +45,13 @@ if (reactotron) {
   enhancers.push(reactotron?.createEnhancer!());
 }
 
-purgeStoredState(persistConfig);
+// purgeStoredState(persistConfig);
 
 export const store = createStore(persistedReducer, compose(...enhancers));
 
 sagaMiddleware.run(rootSaga);
 
-// persistStore(store);
+persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 

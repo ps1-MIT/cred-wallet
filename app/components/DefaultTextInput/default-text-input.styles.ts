@@ -8,7 +8,6 @@ export const styles: DefaultTextInputStyles = StyleSheet.create<
   DefaultTextInputStyles
 >({
   input: {
-    fontSize: 11,
-    lineHeight: 13.75,
+    fontSize: 14,
   },
 });
