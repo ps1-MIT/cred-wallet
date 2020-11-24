@@ -8,10 +8,9 @@ import {
   Easing,
   Image,
 } from 'react-native';
-import SearchBar from 'react-native-search-bar';
 import _ from 'lodash';
 
-import { Text } from '../../components';
+import { SearchBar, Text } from '../../components';
 import { HomeScreenProps } from './home.props';
 import { styles } from './home.styles';
 import { STUB_BACKGROUNDS } from './home.dummy';

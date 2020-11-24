@@ -32,7 +32,6 @@
     "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.10.1",
-    "react-native-search-bar": "^3.5.1",
     "react-native-sensitive-info": "^6.0.0-alpha.8",
     "react-native-touch-id": "^4.4.1",
     "react-native-vector-icons": "^7.1.0",
